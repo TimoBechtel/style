@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/TimoBechtel/style/compare/v1.2.0...v1.3.0) (2023-11-13)
+
+
+### Features
+
+* **typescript:** make no-misused-promises less strict ([c203c1a](https://github.com/TimoBechtel/style/commit/c203c1a065a6bad30557758e3a75239760fa1f80))
+
 # [1.2.0](https://github.com/TimoBechtel/style/compare/v1.1.0...v1.2.0) (2023-11-13)
 
 
