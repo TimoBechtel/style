@@ -92,5 +92,8 @@ module.exports = defineConfig({
         checksVoidReturn: false,
       },
     ],
+    // While I'd prefer using types over interfaces, there are a lot of cases
+    // where interfaces are needed, e.g. merging declarations and this rule is too strict.
+    '@typescript-eslint/consistent-type-definitions': 'off',
   },
 });
