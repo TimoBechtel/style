@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/TimoBechtel/style/compare/v1.3.0...v1.4.0) (2023-11-13)
+
+
+### Features
+
+* **typescript:** disable consistent-type-definitions ([f201b90](https://github.com/TimoBechtel/style/commit/f201b90449cc27afe9b8690a00ef5f13628a782d))
+
 # [1.3.0](https://github.com/TimoBechtel/style/compare/v1.2.0...v1.3.0) (2023-11-13)
 
 
