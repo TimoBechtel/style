@@ -51,6 +51,19 @@ module.exports = {
 };
 ```
 
+Note: You should disable `source.organizeImports` in your VSCode config, as this collides with the `import/order` rule.
+
+Add the following to your VSCode config, e.g. `.vscode/settings.json`
+
+```json
+{
+  "editor.codeActionsOnSave": {
+    // use eslint import/order instead
+    "source.organizeImports": false
+  }
+}
+```
+
 ### semantic-release
 
 This repo also contains a [semantic-release](https://github.com/semantic-release/semantic-release) configuration.
