@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/TimoBechtel/style/compare/v1.1.0...v1.2.0) (2023-11-13)
+
+
+### Features
+
+* **tsconfig:** add no-implicit-any rule ([f5b5566](https://github.com/TimoBechtel/style/commit/f5b55665fae229f4a84d30847ea4b91004596d18))
+
 # [1.1.0](https://github.com/TimoBechtel/style/compare/v1.0.0...v1.1.0) (2023-11-13)
 
 
