@@ -76,8 +76,21 @@ module.exports = defineConfig({
     'import/namespace': 'off',
     'import/no-unresolved': 'off',
 
-    // This is disabled as we feel that checking empty strings is a valid use
+    // This is disabled as I feel that checking empty strings is a valid use
     // of `||` over `??`.
     '@typescript-eslint/prefer-nullish-coalescing': 'off',
+
+    // Disallow Promises in places not designed to handle them.
+    '@typescript-eslint/no-misused-promises': [
+      'error',
+      {
+        // Disabled as I feel that passing a async callback to a function expecting
+        // a void callback is a valid use case.
+        // e.g. fn.on('event', async () => {})
+        // Strictly requiring to return 'undefined' does not have a functional benefit,
+        // but makes the code more verbose.
+        checksVoidReturn: false,
+      },
+    ],
   },
 });
