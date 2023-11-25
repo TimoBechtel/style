@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/TimoBechtel/style/compare/v1.4.0...v1.4.1) (2023-11-25)
+
+
+### Bug Fixes
+
+* **deps:** bump dependencies ([44e2b75](https://github.com/TimoBechtel/style/commit/44e2b7596a98aae1c2c004aea46f4fc88917ec41))
+
 # [1.4.0](https://github.com/TimoBechtel/style/compare/v1.3.0...v1.4.0) (2023-11-13)
 
 
