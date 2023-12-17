@@ -27,5 +27,13 @@ module.exports = defineConfig({
     ],
     // allow default exports
     'import/no-default-export': 'off',
+    /**
+     * These are enabled by `import/recommended`, but are better handled by
+     * TypeScript and @typescript-eslint.
+     */
+    'import/default': 'off',
+    'import/export': 'off',
+    'import/namespace': 'off',
+    'import/no-unresolved': 'off',
   },
 });
