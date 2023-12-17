@@ -78,5 +78,7 @@ module.exports = defineConfig({
         varsIgnorePattern: '^_',
       },
     ],
+    // Disallow expressions where the operation doesn't affect the value
+    'no-constant-binary-expression': 'error',
   },
 });
