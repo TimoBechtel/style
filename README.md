@@ -51,6 +51,36 @@ module.exports = {
 };
 ```
 
+#### React
+
+Also add `require.resolve('@timobechtel/style/eslint/react.cjs')` to the `extends` array.
+
+Example config:
+
+```js
+const { resolve } = require('node:path');
+
+const project = resolve(process.cwd(), 'tsconfig.json');
+
+module.exports = {
+  root: true,
+  extends: [
+    require.resolve('@timobechtel/style/eslint/core.cjs'),
+    require.resolve('@timobechtel/style/eslint/react.cjs'),
+  ],
+  parserOptions: {
+    project,
+  },
+  settings: {
+    'import/resolver': {
+      typescript: {
+        project,
+      },
+    },
+  },
+};
+```
+
 Note: You should disable `source.organizeImports` in your VSCode config, as this collides with the `import/order` rule.
 
 Add the following to your VSCode config, e.g. `.vscode/settings.json`
