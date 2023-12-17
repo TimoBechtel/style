@@ -1,3 +1,16 @@
+# [1.5.0](https://github.com/TimoBechtel/style/compare/v1.4.1...v1.5.0) (2023-12-17)
+
+
+### Bug Fixes
+
+* **eslint:** disable a few import rules that are handled by ts rules ([b6e133e](https://github.com/TimoBechtel/style/commit/b6e133ef11f778e132b0e2ae9074cf50dac9d7b1))
+
+
+### Features
+
+* **eslint:** activate no-constant-binary-expression rule ([dff1a30](https://github.com/TimoBechtel/style/commit/dff1a30f760405fbbd52ab2675fb7ceb1a22cde0))
+* **eslint:** add react config ([7c8709d](https://github.com/TimoBechtel/style/commit/7c8709df9c1d4ea354cc8783a616ad414611712e))
+
 ## [1.4.1](https://github.com/TimoBechtel/style/compare/v1.4.0...v1.4.1) (2023-11-25)
 
 
