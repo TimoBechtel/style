@@ -45,5 +45,15 @@ module.exports = defineConfig({
         require.resolve('./rules/typescript.cjs'),
       ],
     },
+    {
+      files: ['*.test.ts?(x)', '*.spec.ts?(x)'],
+      rules: {
+        // ts-expect-error makes sense for tests
+        '@typescript-eslint/ban-ts-comment': [
+          'off',
+          { 'ts-expect-error': 'off' },
+        ],
+      },
+    },
   ],
 });
