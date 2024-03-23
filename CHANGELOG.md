@@ -1,3 +1,11 @@
+# [1.6.0](https://github.com/TimoBechtel/style/compare/v1.5.0...v1.6.0) (2024-03-23)
+
+
+### Features
+
+* **eslint:** allow ts-expect-error for test files ([75f8c93](https://github.com/TimoBechtel/style/commit/75f8c936cbd64dd2ded9b854e32770a7606a35a6))
+* **eslint:** update typescript rules ([e45979f](https://github.com/TimoBechtel/style/commit/e45979f569c64d80ee6329d8e97f70b2e3c146ca))
+
 # [1.5.0](https://github.com/TimoBechtel/style/compare/v1.4.1...v1.5.0) (2023-12-17)
 
 
