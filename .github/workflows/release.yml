@@ -13,6 +13,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      # looks like semantic-release checks node version
+      # even though bun is used instead... :(
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 'lts/*'
+
       - uses: oven-sh/setup-bun@v1
 
       - name: Install dependencies
