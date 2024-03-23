@@ -95,5 +95,12 @@ module.exports = defineConfig({
     // While I'd prefer using types over interfaces, there are a lot of cases
     // where interfaces are needed, e.g. merging declarations and this rule is too strict.
     '@typescript-eslint/consistent-type-definitions': 'off',
+    // while using property signatures provides better typechecking,
+    // method signatures provide better hinting in the editor.
+    // (different color for methods vs properties)
+    '@typescript-eslint/method-signature-style': 'off',
+    // There are cases where using the index signature is more descriptive
+    // as the index can be named
+    '@typescript-eslint/consistent-indexed-object-style': 'off',
   },
 });
