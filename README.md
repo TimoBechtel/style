@@ -89,7 +89,7 @@ Add the following to your VSCode config, e.g. `.vscode/settings.json`
 {
   "editor.codeActionsOnSave": {
     // use eslint import/order instead
-    "source.organizeImports": false
+    "source.organizeImports": "never"
   }
 }
 ```
