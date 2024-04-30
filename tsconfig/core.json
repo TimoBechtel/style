@@ -13,6 +13,7 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noImplicitAny": true,
+    "noUncheckedIndexedAccess": true,
     "preserveWatchOutput": true,
     "skipLibCheck": true,
     "strict": true,
