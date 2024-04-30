@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/TimoBechtel/style/compare/v1.6.0...v1.7.0) (2024-04-30)
+
+
+### Features
+
+* **ts:** add noUncheckedIndexedAccess config ([b0bdc89](https://github.com/TimoBechtel/style/commit/b0bdc89a1b9820325d13358ff13050e1221d1fa9))
+
 # [1.6.0](https://github.com/TimoBechtel/style/compare/v1.5.0...v1.6.0) (2024-03-23)
 
 
