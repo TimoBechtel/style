@@ -7,7 +7,7 @@ Highly opinionated configuration files for typescript projects. Inspired by [@ve
 ## Usage
 
 ```bash
-npm i -D @timobechtel/style prettier eslint typescript
+npm i -D @timobechtel/style prettier "eslint@^8.57.0" typescript
 ```
 
 ### Prettier
