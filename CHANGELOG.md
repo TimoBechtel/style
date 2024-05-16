@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/TimoBechtel/style/compare/v1.10.0...v1.11.0) (2024-05-16)
+
+
+### Features
+
+* **tsconfig:** remove declaration option from react config ([f00a8b5](https://github.com/TimoBechtel/style/commit/f00a8b58363ad6584d774abf03dbcb496392fd06))
+
 # [1.10.0](https://github.com/TimoBechtel/style/compare/v1.9.0...v1.10.0) (2024-05-16)
 
 
