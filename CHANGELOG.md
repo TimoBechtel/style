@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/TimoBechtel/style/compare/v1.9.0...v1.10.0) (2024-05-16)
+
+
+### Features
+
+* **eslint:** remove noEmit option from react config ([5105e09](https://github.com/TimoBechtel/style/commit/5105e0985d25eecd608db4a173ecfa56f6b9a614))
+
 # [1.9.0](https://github.com/TimoBechtel/style/compare/v1.8.0...v1.9.0) (2024-05-16)
 
 
