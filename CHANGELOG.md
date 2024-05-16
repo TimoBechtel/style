@@ -1,3 +1,12 @@
+# [1.9.0](https://github.com/TimoBechtel/style/compare/v1.8.0...v1.9.0) (2024-05-16)
+
+
+### Features
+
+* **eslint:** update eslint typescript config ([00e1695](https://github.com/TimoBechtel/style/commit/00e1695a1598540a06716b27084163b1a63cefe3))
+* **tsconfig:** add tsconfig for react apps ([5e5caba](https://github.com/TimoBechtel/style/commit/5e5cabad3e9f72e4fe77806881eec142d98537de))
+* **tsconfig:** update core tsconfig ([03b6b23](https://github.com/TimoBechtel/style/commit/03b6b239d58940d789873bff8b9d071c0ed0f77e))
+
 # [1.8.0](https://github.com/TimoBechtel/style/compare/v1.7.0...v1.8.0) (2024-05-16)
 
 
