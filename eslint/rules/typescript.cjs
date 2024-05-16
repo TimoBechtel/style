@@ -102,5 +102,7 @@ module.exports = defineConfig({
     // There are cases where using the index signature is more descriptive
     // as the index can be named
     '@typescript-eslint/consistent-indexed-object-style': 'off',
+    // Enforce using a top-level type qualifier for imports when only types are imported using the inline type qualifier
+    '@typescript-eslint/no-import-type-side-effects': 'error',
   },
 });
