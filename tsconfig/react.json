@@ -5,7 +5,6 @@
   "compilerOptions": {
     "moduleResolution": "bundler",
     "module": "Preserve",
-    "noEmit": true,
     "declaration": false,
     "jsx": "react-jsx"
   }
