@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "./core.json",
+  "display": "TSConfig for React apps",
+  "compilerOptions": {
+    "moduleResolution": "bundler",
+    "module": "Preserve",
+    "noEmit": true,
+    "declaration": false,
+    "jsx": "react-jsx"
+  }
+}

@@ -22,6 +22,12 @@ echo '"@timobechtel/style/prettier/index.mjs"' > .prettierrc
 echo '{ "extends": "@timobechtel/style/tsconfig/core" }' > tsconfig.json
 ```
 
+#### Or with React
+
+```bash
+echo '{ "extends": "@timobechtel/style/tsconfig/react" }' > tsconfig.json
+```
+
 ### Eslint
 
 ```bash
@@ -80,6 +86,8 @@ module.exports = {
   },
 };
 ```
+
+#### VSCode
 
 Note: You should disable `source.organizeImports` in your VSCode config, as this collides with the `import/order` rule.
 
