@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/TimoBechtel/style/compare/v1.7.0...v1.8.0) (2024-05-16)
+
+
+### Features
+
+* **tsconfig:** update moduleResolution ([5d259ab](https://github.com/TimoBechtel/style/commit/5d259abdbd84887e473886145d0abe51a5b480b4))
+
 # [1.7.0](https://github.com/TimoBechtel/style/compare/v1.6.0...v1.7.0) (2024-04-30)
 
 
