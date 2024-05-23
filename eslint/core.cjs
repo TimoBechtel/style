@@ -6,6 +6,7 @@ module.exports = defineConfig({
     'eslint:recommended',
     'plugin:import/recommended',
     'prettier',
+    'plugin:no-template-curly-in-string-fix/recommended',
     require.resolve('./rules/base.cjs'),
     require.resolve('./rules/import.cjs'),
     require.resolve('./rules/unicorn.cjs'),
