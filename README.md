@@ -16,6 +16,26 @@ npm i -D @timobechtel/style prettier "eslint@^8.57.0" typescript
 echo '"@timobechtel/style/prettier/index.mjs"' > .prettierrc
 ```
 
+<details>
+  <summary>Extend / customize config</summary>
+
+  Need to extend the config, e.g. adding plugins?
+
+  Create a .prettierrc.mjs file and import the config, like this:
+  
+  ```js
+  import config from '@timobechtel/style/prettier/index.mjs';
+  
+  export default {
+    ...config,
+    // your config
+  }
+  ```
+  
+</details>
+
+
+
 ### Typescript
 
 ```bash
