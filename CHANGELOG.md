@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/TimoBechtel/style/compare/v1.11.0...v1.12.0) (2024-08-09)
+
+
+### Features
+
+* **eslint:** auto-fix template syntax in strings ([127e681](https://github.com/TimoBechtel/style/commit/127e68135217799fbe93de896ef191a508b81fcd))
+
 # [1.11.0](https://github.com/TimoBechtel/style/compare/v1.10.0...v1.11.0) (2024-05-16)
 
 
