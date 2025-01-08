@@ -50,13 +50,18 @@ curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/temp
 curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/tsconfig/core/tsconfig.json
 ```
 
-Or manually copy to `tsconfig.json`:
+<details>
+  <summary>Or manually</summary>
 
-```json
-{ 
-   "extends": "@timobechtel/style/tsconfig/core"
-}
-```
+  Copy to `tsconfig.json`:
+
+  ```json
+  { 
+    "extends": "@timobechtel/style/tsconfig/core"
+  }
+  ```
+
+  </details>
 
 #### Or with React
 
@@ -64,13 +69,18 @@ Or manually copy to `tsconfig.json`:
 curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/tsconfig/react/tsconfig.json
 ```
 
-Or manually copy to `tsconfig.json`:
+<details>
+  <summary>Or manually</summary>
 
-```json
-{ 
-   "extends": "@timobechtel/style/tsconfig/react"
-}
-```
+  Copy to `tsconfig.json`:
+
+  ```json
+  { 
+    "extends": "@timobechtel/style/tsconfig/react"
+  }
+  ```
+
+  </details>
 
 ### Eslint
 
@@ -112,12 +122,14 @@ curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/temp
 curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/eslint/react/.eslintrc.cjs
 ```
 
-Or manually:
+<details>
+  <summary>Or manually</summary>
+  
+  Also add `require.resolve('@timobechtel/style/eslint/react.cjs')` to the `extends` array.
 
-Also add `require.resolve('@timobechtel/style/eslint/react.cjs')` to the `extends` array.
-
-Example config:
-<https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/eslint/react/.eslintrc.cjs>
+  Example config:
+  <https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/eslint/react/.eslintrc.cjs>
+</details>
 
 #### VSCode
 
