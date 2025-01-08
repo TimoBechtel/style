@@ -10,29 +10,29 @@
     "tsconfig"
   ],
   "devDependencies": {
-    "eslint": "^8.57.0",
-    "prettier": "^3.3.3",
-    "semantic-release": "^24.0.0",
-    "typescript": "^5.5.4"
+    "eslint": "^8.57.1",
+    "prettier": "^3.4.2",
+    "semantic-release": "^24.2.1",
+    "typescript": "^5.7.2"
   },
   "peerDependencies": {
-    "eslint": "^8.57.0",
-    "prettier": "^3.3.3",
-    "semantic-release": "^24.0.0",
-    "typescript": "^5.5.4"
+    "eslint": "^8.57.1",
+    "prettier": "^3.4.2",
+    "semantic-release": "^24.2.1",
+    "typescript": "^5.7.2"
   },
   "dependencies": {
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
-    "@typescript-eslint/eslint-plugin": "^7.18.0",
-    "@typescript-eslint/parser": "^7.3.1",
+    "@typescript-eslint/eslint-plugin": "^8.19.1",
+    "@typescript-eslint/parser": "^8.19.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-define-config": "^2.1.0",
-    "eslint-import-resolver-typescript": "^3.6.1",
-    "eslint-plugin-import": "^2.29.1",
+    "eslint-import-resolver-typescript": "^3.7.0",
+    "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-no-template-curly-in-string-fix": "^1.0.4",
-    "eslint-plugin-react": "^7.35.0",
-    "eslint-plugin-react-hooks": "^4.6.2",
-    "eslint-plugin-unicorn": "^55.0.0"
+    "eslint-plugin-react": "^7.37.3",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-unicorn": "^56.0.1"
   }
 }

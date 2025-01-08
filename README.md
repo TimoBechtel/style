@@ -7,7 +7,7 @@ Highly opinionated configuration files for typescript projects. Inspired by [@ve
 ## Usage
 
 ```bash
-npm i -D @timobechtel/style prettier "eslint@^8.57.0" typescript
+npm i -D @timobechtel/style prettier "eslint@^8.57.1" typescript
 ```
 
 ### Prettier
@@ -37,8 +37,6 @@ echo '"@timobechtel/style/prettier/index.mjs"' > .prettierrc
   
 </details>
 
-
-
 ### Typescript
 
 ```bash
@@ -53,11 +51,7 @@ echo '{ "extends": "@timobechtel/style/tsconfig/react" }' > tsconfig.json
 
 ### Eslint
 
-```bash
-echo 'const{resolve}=require("node:path");const project=resolve(process.cwd(),"tsconfig.json");module.exports={root:true,extends:[require.resolve("@timobechtel/style/eslint/core.cjs")],parserOptions:{project},settings:{"import/resolver":{typescript:{project}}}};' > .eslintrc.cjs
-```
-
-Or copy the following to a `.eslintrc.cjs` manually:
+Copy the following to a `.eslintrc.cjs`:
 
 ```js
 const { resolve } = require('node:path');
@@ -68,7 +62,7 @@ module.exports = {
   root: true,
   extends: [require.resolve('@timobechtel/style/eslint/core.cjs')],
   parserOptions: {
-    project,
+    tsconfigRootDir: process.cwd(),
   },
   settings: {
     'import/resolver': {
