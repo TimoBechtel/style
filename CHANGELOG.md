@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/TimoBechtel/style/compare/v1.12.0...v1.13.0) (2025-01-08)
+
+
+### Features
+
+* update dependencies to latest version ([1d2c8aa](https://github.com/TimoBechtel/style/commit/1d2c8aa66c958258be3480ba78136be4e3e2dc66))
+
 # [1.12.0](https://github.com/TimoBechtel/style/compare/v1.11.0...v1.12.0) (2024-08-09)
 
 
