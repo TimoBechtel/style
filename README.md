@@ -4,6 +4,9 @@
 
 Highly opinionated configuration files for typescript projects. Inspired by [@vercel/style-guide](https://github.com/vercel/style-guide)
 
+> [!WARNING]  
+> Make sure to first commit your code before running the following commands. To allow you to easily revert the changes.
+
 ## Usage
 
 ```bash
@@ -13,13 +16,17 @@ npm i -D @timobechtel/style prettier "eslint@^8.57.1" typescript
 ### Prettier
 
 ```bash
-echo '"@timobechtel/style/prettier/index.mjs"' > .prettierrc
+curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/.prettierrc
 ```
 
 <details>
   <summary>Extend / customize config</summary>
 
   Need to extend the config, e.g. adding plugins?
+
+  ```bash
+  curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/.prettierrc.mjs
+  ```
 
   Create a .prettierrc.mjs file and import the config, like this:
   
@@ -40,69 +47,77 @@ echo '"@timobechtel/style/prettier/index.mjs"' > .prettierrc
 ### Typescript
 
 ```bash
-echo '{ "extends": "@timobechtel/style/tsconfig/core" }' > tsconfig.json
+curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/tsconfig/core/tsconfig.json
+```
+
+Or manually copy to `tsconfig.json`:
+
+```json
+{ 
+   "extends": "@timobechtel/style/tsconfig/core"
+}
 ```
 
 #### Or with React
 
 ```bash
-echo '{ "extends": "@timobechtel/style/tsconfig/react" }' > tsconfig.json
+curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/tsconfig/react/tsconfig.json
+```
+
+Or manually copy to `tsconfig.json`:
+
+```json
+{ 
+   "extends": "@timobechtel/style/tsconfig/react"
+}
 ```
 
 ### Eslint
 
-Copy the following to a `.eslintrc.cjs`:
-
-```js
-const { resolve } = require('node:path');
-
-const project = resolve(process.cwd(), 'tsconfig.json');
-
-module.exports = {
-  root: true,
-  extends: [require.resolve('@timobechtel/style/eslint/core.cjs')],
-  parserOptions: {
-    tsconfigRootDir: process.cwd(),
-  },
-  settings: {
-    'import/resolver': {
-      typescript: {
-        project,
-      },
-    },
-  },
-};
+```bash
+curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/eslint/core/.eslintrc.cjs
 ```
 
+<details>
+  <summary>Or manually</summary>
+
+  Copy the following to a `.eslintrc.cjs`:
+
+  ```js
+  const { resolve } = require('node:path');
+
+  const project = resolve(process.cwd(), 'tsconfig.json');
+
+  module.exports = {
+    root: true,
+    extends: [require.resolve('@timobechtel/style/eslint/core.cjs')],
+    parserOptions: {
+      tsconfigRootDir: process.cwd(),
+    },
+    settings: {
+      'import/resolver': {
+        typescript: {
+          project,
+        },
+      },
+    },
+  };
+  ```
+
+</details>
+
 #### React
+
+```bash
+curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/eslint/react/.eslintrc.cjs
+```
+
+Or manually:
 
 Also add `require.resolve('@timobechtel/style/eslint/react.cjs')` to the `extends` array.
 
 Example config:
-
-```js
-const { resolve } = require('node:path');
-
-const project = resolve(process.cwd(), 'tsconfig.json');
-
-module.exports = {
-  root: true,
-  extends: [
-    require.resolve('@timobechtel/style/eslint/core.cjs'),
-    require.resolve('@timobechtel/style/eslint/react.cjs'),
-  ],
-  parserOptions: {
-    project,
-  },
-  settings: {
-    'import/resolver': {
-      typescript: {
-        project,
-      },
-    },
-  },
-};
-```
+<https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/eslint/react/.eslintrc.cjs>
 
 #### VSCode
 
