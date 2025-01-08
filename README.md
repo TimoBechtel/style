@@ -88,6 +88,24 @@ curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/temp
 curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/eslint/core/.eslintrc.cjs
 ```
 
+#### Fix Parsing errors for config files
+
+You may get a `Parsing error: <FILE> was not found by the project service.` for config files like .eslintrc.cjs when not included in the tsconfig.
+
+To fix, either add to tsconfig or add them to the eslint config:
+
+```diff
+  //...
+  parserOptions: {
++    projectService: {
++      allowDefaultProject: ['.eslintrc.cjs'],
++    },
+    //...
+  },
+  //...
+```
+
+
 <details>
   <summary>Or manually</summary>
 
