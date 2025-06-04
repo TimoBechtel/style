@@ -46,22 +46,54 @@ curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/temp
 
 ### Typescript
 
+#### Existing tsconfig
+
+For existing projects or templates, I recomment leaving the config as-is and adding this preset to the extends array.
+
+```json
+{
+  "extends": ["@timobechtel/style/tsconfig/core"]
+}
+```
+
+#### New tsconfig
+
 ```bash
 curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/tsconfig/core/tsconfig.json
 ```
 
+#### Expo
+
+With expo make sure to add `"moduleResolution": "bundler"` to the `compilerOptions`, otherwise certain routing types might break.
+
 <details>
-  <summary>Or manually</summary>
+  <summary>Example</summary>
 
   Copy to `tsconfig.json`:
 
   ```json
-  { 
-    "extends": "@timobechtel/style/tsconfig/core"
+  {
+    "extends": ["expo/tsconfig.base", "@timobechtel/style/tsconfig/core"],
+    "compilerOptions": {
+      "moduleResolution": "bundler", // <-- this is important
+      "strict": true,
+      "paths": {
+        "@/*": [
+          "./*"
+        ]
+      }
+    },
+    "include": [
+      "**/*.ts",
+      "**/*.tsx",
+      ".expo/types/**/*.ts",
+      "expo-env.d.ts"
+    ]
   }
   ```
 
   </details>
+
 
 #### Or with React
 
