@@ -7,6 +7,7 @@ module.exports = defineConfig({
     'plugin:import/recommended',
     'prettier',
     'plugin:no-template-curly-in-string-fix/recommended',
+    'plugin:@timobechtel/rules/all',
     require.resolve('./rules/base.cjs'),
     require.resolve('./rules/import.cjs'),
     require.resolve('./rules/unicorn.cjs'),
