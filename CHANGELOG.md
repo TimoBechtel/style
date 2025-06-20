@@ -1,3 +1,10 @@
+# [1.14.0](https://github.com/TimoBechtel/style/compare/v1.13.0...v1.14.0) (2025-06-20)
+
+
+### Features
+
+* add custom eslint rules ([137f5d4](https://github.com/TimoBechtel/style/commit/137f5d4450451daa62fbd6890ec442eed5658632))
+
 # [1.13.0](https://github.com/TimoBechtel/style/compare/v1.12.0...v1.13.0) (2025-01-08)
 
 
