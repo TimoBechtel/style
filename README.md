@@ -201,7 +201,7 @@ Add the following to your VSCode config, e.g. `.vscode/settings.json`
 This repo also contains a [semantic-release](https://github.com/semantic-release/semantic-release) configuration.
 
 ```bash
-npm i -D semantic-release
+npm i -D semantic-release @semantic-release/changelog @semantic-release/git
 ```
 
 ```bash
