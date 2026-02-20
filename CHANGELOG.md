@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/TimoBechtel/style/compare/v2.0.0...v2.0.1) (2026-02-20)
+
+
+### Bug Fixes
+
+* **release:** retry publish ([842c906](https://github.com/TimoBechtel/style/commit/842c90640852eea041f95bf02e0200bef03fdab9))
+
 # [2.0.0](https://github.com/TimoBechtel/style/compare/v1.14.0...v2.0.0) (2026-02-20)
 
 
