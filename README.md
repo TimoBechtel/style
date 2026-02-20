@@ -10,7 +10,7 @@ Highly opinionated configuration files for typescript projects. Inspired by [@ve
 ## Usage
 
 ```bash
-npm i -D @timobechtel/style prettier "eslint@^8.57.1" typescript
+npm i -D @timobechtel/style prettier "eslint@^9" typescript
 ```
 
 ### Prettier
@@ -94,7 +94,6 @@ With expo make sure to add `"moduleResolution": "bundler"` to the `compilerOptio
 
   </details>
 
-
 #### Or with React
 
 ```bash
@@ -117,51 +116,44 @@ curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/temp
 ### Eslint
 
 ```bash
-curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/eslint/core/.eslintrc.cjs
+curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/eslint/core/eslint.config.js
 ```
 
-#### Fix Parsing errors for config files
-
-You may get a `Parsing error: <FILE> was not found by the project service.` for config files like .eslintrc.cjs when not included in the tsconfig.
-
-To fix, either add to tsconfig or add them to the eslint config:
-
-```diff
-  //...
-  parserOptions: {
-+    projectService: {
-+      allowDefaultProject: ['.eslintrc.cjs'],
-+    },
-    //...
-  },
-  //...
-```
-
+Note: If your project is not ESM (no `"type": "module"` in `package.json`), rename the file to `eslint.config.mjs`.
 
 <details>
   <summary>Or manually</summary>
 
-  Copy the following to a `.eslintrc.cjs`:
+  Copy the following to an `eslint.config.js`:
 
   ```js
-  const { resolve } = require('node:path');
+  import path from 'node:path';
+  import { fileURLToPath } from 'node:url';
+  import { defineConfig } from 'eslint/config';
+  import styleCore from '@timobechtel/style/eslint/core.js';
+  import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
+  import { createNodeResolver } from 'eslint-plugin-import-x';
 
-  const project = resolve(process.cwd(), 'tsconfig.json');
+  const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-  module.exports = {
-    root: true,
-    extends: [require.resolve('@timobechtel/style/eslint/core.cjs')],
-    parserOptions: {
-      tsconfigRootDir: process.cwd(),
-    },
-    settings: {
-      'import/resolver': {
-        typescript: {
-          project,
+  export default defineConfig([
+    ...styleCore,
+    {
+      languageOptions: {
+        parserOptions: {
+          tsconfigRootDir: __dirname,
         },
       },
+      settings: {
+        'import-x/resolver-next': [
+          createTypeScriptImportResolver({
+            project: path.resolve(__dirname, 'tsconfig.json'),
+          }),
+          createNodeResolver(),
+        ],
+      },
     },
-  };
+  ]);
   ```
 
 </details>
@@ -169,28 +161,49 @@ To fix, either add to tsconfig or add them to the eslint config:
 #### React
 
 ```bash
-curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/eslint/react/.eslintrc.cjs
+curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/eslint/react/eslint.config.js
 ```
 
 <details>
   <summary>Or manually</summary>
   
-  Also add `require.resolve('@timobechtel/style/eslint/react.cjs')` to the `extends` array.
+  Also spread `styleReact` from `@timobechtel/style/eslint/react.js`:
+
+  ```js
+  import styleCore from '@timobechtel/style/eslint/core.js';
+  import styleReact from '@timobechtel/style/eslint/react.js';
+  import { defineConfig } from 'eslint/config';
+
+  export default defineConfig([
+    ...styleCore,
+    ...styleReact,
+    // ... your config
+  ]);
+  ```
 
   Example config:
-  <https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/eslint/react/.eslintrc.cjs>
+  <https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/eslint/react/eslint.config.js>
 </details>
+
+#### Migration from v1.x
+
+If you're upgrading from v1.x, you'll need to:
+
+1. Upgrade to ESLint v9+
+2. Replace `.eslintrc.cjs` with `eslint.config.js`
+3. Update imports to use `.js` extension (e.g., `@timobechtel/style/eslint/core.js`)
+4. Note: Import plugin rules now use `import-x/` prefix instead of `import/`
 
 #### VSCode
 
-Note: You should disable `source.organizeImports` in your VSCode config, as this collides with the `import/order` rule.
+Note: You should disable `source.organizeImports` in your VSCode config, as this collides with the `import-x/order` rule.
 
 Add the following to your VSCode config, e.g. `.vscode/settings.json`
 
 ```json
 {
   "editor.codeActionsOnSave": {
-    // use eslint import/order instead
+    // use eslint import-x/order instead
     "source.sortImports": "never"
   }
 }
