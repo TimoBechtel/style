@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/TimoBechtel/style/compare/v1.14.0...v2.0.0) (2026-02-20)
+
+
+### Features
+
+* **eslint:** upgrade to eslint 9 ([2a0f4f9](https://github.com/TimoBechtel/style/commit/2a0f4f9685cd0c45448f36fa3dee1004c92b5776))
+
+
+### BREAKING CHANGES
+
+* **eslint:** requires ESLint v9 and the new flat config format
+
 # [1.14.0](https://github.com/TimoBechtel/style/compare/v1.13.0...v1.14.0) (2025-06-20)
 
 
