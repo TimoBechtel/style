@@ -4,7 +4,7 @@
 
 Highly opinionated configuration files for typescript projects.
 
-> [!TIP] Agentic setup
+> [!TIP]
 > Let your agent set this up for you:
 >
 > ```
@@ -150,7 +150,6 @@ Copy to `tsconfig.json`:
 
 ### Prettier
 
-> [!NOTE] Deprecated
 > Prettier config will not be updated anymore. I recommend using [Oxfmt](#oxfmt) instead.
 > oxfmt has been configured to match prettier rules, however this might drift in future versions.
 
@@ -195,7 +194,6 @@ export default {
 
 ### Eslint
 
-> [!NOTE] Deprecated
 > Eslint config will be removed in a future version. Use [Oxlint](#oxlint) instead.
 > oxlint has been configured to match existing eslint rules, however this might drift in future versions.
 
