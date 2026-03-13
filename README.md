@@ -13,6 +13,12 @@ Highly opinionated configuration files for typescript projects.
 npm i -D @timobechtel/style typescript
 ```
 
+Install gh-get to make it easier to download the template files:
+
+```bash
+gh extension install timobechtel/gh-get
+```
+
 ### [Oxfmt](https://oxc.rs/docs/guide/usage/formatter.html)
 
 > Code formatter, replaces Prettier.
@@ -22,8 +28,10 @@ npm i -D oxfmt
 ```
 
 ```bash
-curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/.oxfmtrc.json
+gh get timobechtel/style templates/.oxfmtrc.json
 ```
+
+- [oxfmt template](https://github.com/TimoBechtel/style/tree/refs/heads/main/templates/.oxfmtrc.json)
 
 ### [Oxlint](https://oxc.rs/docs/guide/usage/linter.html)
 
@@ -36,14 +44,18 @@ npm i -D oxlint
 Core:
 
 ```bash
-curl -o .oxlintrc.jsonc https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/oxlint/core/.oxlintrc.jsonc
+gh get timobechtel/style templates/.oxlintrc.jsonc
 ```
+
+- [oxlint core template](https://github.com/TimoBechtel/style/tree/refs/heads/main/templates/.oxlintrc.jsonc)
 
 React:
 
 ```bash
-curl -o .oxlintrc.jsonc https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/oxlint/react/.oxlintrc.jsonc
+gh get timobechtel/style templates/react/.oxlintrc.jsonc
 ```
+
+- [oxlint react template](https://github.com/TimoBechtel/style/tree/refs/heads/main/templates/react/.oxlintrc.jsonc)
 
 <details>
   <summary>Migrating to Oxlint? - `File '@timobechtel/style/tsconfig/core' not found.`</summary>
@@ -81,13 +93,15 @@ For existing projects or templates, I recomment leaving the config as-is and add
 #### New tsconfig
 
 ```bash
-curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/tsconfig/core/tsconfig.json
+gh get timobechtel/style templates/tsconfig.json
 ```
+
+- [tsconfig core template](https://github.com/TimoBechtel/style/tree/refs/heads/main/templates/tsconfig.json)
 
 #### Or with React
 
 ```bash
-curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/tsconfig/react/tsconfig.json
+gh get timobechtel/style templates/react/tsconfig.json
 ```
 
 <details>
@@ -142,8 +156,10 @@ npm i -D prettier
 ```
 
 ```bash
-curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/.prettierrc
+gh get timobechtel/style templates/.prettierrc
 ```
+
+- [prettier template](https://github.com/TimoBechtel/style/tree/refs/heads/main/templates/.prettierrc)
 
 <details>
   <summary>Extend / customize config</summary>
@@ -151,7 +167,7 @@ curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/temp
 Need to extend the config, e.g. adding plugins?
 
 ```bash
-curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/.prettierrc.mjs
+gh get timobechtel/style templates/.prettierrc.mjs
 ```
 
 Create a .prettierrc.mjs file and import the config, like this:
@@ -185,8 +201,10 @@ npm i -D eslint
 ```
 
 ```bash
-curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/eslint/core/eslint.config.js
+gh get timobechtel/style templates/eslint.config.js
 ```
+
+- [eslint core template](https://github.com/TimoBechtel/style/tree/refs/heads/main/templates/eslint.config.js)
 
 Note: If your project is not ESM (no `"type": "module"` in `package.json`), rename the file to `eslint.config.mjs`.
 
@@ -230,8 +248,10 @@ export default defineConfig([
 #### React
 
 ```bash
-curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/eslint/react/eslint.config.js
+gh get timobechtel/style templates/react/eslint.config.js
 ```
+
+- [eslint react template](https://github.com/TimoBechtel/style/tree/refs/heads/main/templates/react/eslint.config.js)
 
 <details>
   <summary>Or manually</summary>
@@ -251,7 +271,7 @@ export default defineConfig([
 ```
 
 Example config:
-<https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/eslint/react/eslint.config.js>
+<https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/react/eslint.config.js>
 
 </details>
 
@@ -290,5 +310,7 @@ npm i -D semantic-release @semantic-release/changelog @semantic-release/git
 ```
 
 ```bash
-echo '{ "extends": "@timobechtel/style/semantic-release/index.cjs" }' > .releaserc.json
+gh get timobechtel/style templates/.releaserc.json
 ```
+
+- [semantic-release template](https://github.com/TimoBechtel/style/tree/refs/heads/main/templates/.releaserc.json)
