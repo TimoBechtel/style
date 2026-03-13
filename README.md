@@ -13,6 +13,28 @@ Highly opinionated configuration files for typescript projects. Inspired by [@ve
 npm i -D @timobechtel/style prettier "eslint@^9" typescript
 ```
 
+### Oxfmt
+
+```bash
+curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/.oxfmtrc.json
+```
+
+### Oxlint
+
+Core:
+
+```bash
+curl -o .oxlintrc.jsonc https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/oxlint/core/.oxlintrc.jsonc
+```
+
+React:
+
+```bash
+curl -o .oxlintrc.jsonc https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/oxlint/react/.oxlintrc.jsonc
+```
+
+Note: The preset enables type-aware rules by default and ships the required tsgolint runtime as a dependency.
+
 ### Prettier
 
 ```bash
@@ -22,26 +44,26 @@ curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/temp
 <details>
   <summary>Extend / customize config</summary>
 
-  Need to extend the config, e.g. adding plugins?
+Need to extend the config, e.g. adding plugins?
 
-  ```bash
-  curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/.prettierrc.mjs
-  ```
+```bash
+curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/.prettierrc.mjs
+```
 
-  Create a .prettierrc.mjs file and import the config, like this:
-  
-  ```js
-  import config from '@timobechtel/style/prettier/index.mjs';
+Create a .prettierrc.mjs file and import the config, like this:
 
-  /**
-   * @type {import("prettier").Config}
-   */
-  export default {
-    ...config,
-    // your config
-  }
-  ```
-  
+```js
+import config from '@timobechtel/style/prettier/index.mjs';
+
+/**
+ * @type {import("prettier").Config}
+ */
+export default {
+  ...config,
+  // your config
+};
+```
+
 </details>
 
 ### Typescript
@@ -52,7 +74,7 @@ For existing projects or templates, I recomment leaving the config as-is and add
 
 ```json
 {
-  "extends": ["@timobechtel/style/tsconfig/core"]
+  "extends": ["@timobechtel/style/tsconfig/core.json"]
 }
 ```
 
@@ -69,28 +91,21 @@ With expo make sure to add `"moduleResolution": "bundler"` to the `compilerOptio
 <details>
   <summary>Example</summary>
 
-  Copy to `tsconfig.json`:
+Copy to `tsconfig.json`:
 
-  ```json
-  {
-    "extends": ["expo/tsconfig.base", "@timobechtel/style/tsconfig/core"],
-    "compilerOptions": {
-      "moduleResolution": "bundler", // <-- this is important
-      "strict": true,
-      "paths": {
-        "@/*": [
-          "./*"
-        ]
-      }
-    },
-    "include": [
-      "**/*.ts",
-      "**/*.tsx",
-      ".expo/types/**/*.ts",
-      "expo-env.d.ts"
-    ]
-  }
-  ```
+```json
+{
+  "extends": ["expo/tsconfig.base", "@timobechtel/style/tsconfig/core.json"],
+  "compilerOptions": {
+    "moduleResolution": "bundler", // <-- this is important
+    "strict": true,
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"]
+}
+```
 
   </details>
 
@@ -103,13 +118,13 @@ curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/temp
 <details>
   <summary>Or manually</summary>
 
-  Copy to `tsconfig.json`:
+Copy to `tsconfig.json`:
 
-  ```json
-  { 
-    "extends": "@timobechtel/style/tsconfig/react"
-  }
-  ```
+```json
+{
+  "extends": "@timobechtel/style/tsconfig/react.json"
+}
+```
 
   </details>
 
@@ -124,37 +139,37 @@ Note: If your project is not ESM (no `"type": "module"` in `package.json`), rena
 <details>
   <summary>Or manually</summary>
 
-  Copy the following to an `eslint.config.js`:
+Copy the following to an `eslint.config.js`:
 
-  ```js
-  import path from 'node:path';
-  import { fileURLToPath } from 'node:url';
-  import { defineConfig } from 'eslint/config';
-  import styleCore from '@timobechtel/style/eslint/core.js';
-  import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
-  import { createNodeResolver } from 'eslint-plugin-import-x';
+```js
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { defineConfig } from 'eslint/config';
+import styleCore from '@timobechtel/style/eslint/core.js';
+import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
+import { createNodeResolver } from 'eslint-plugin-import-x';
 
-  const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-  export default defineConfig([
-    ...styleCore,
-    {
-      languageOptions: {
-        parserOptions: {
-          tsconfigRootDir: __dirname,
-        },
-      },
-      settings: {
-        'import-x/resolver-next': [
-          createTypeScriptImportResolver({
-            project: path.resolve(__dirname, 'tsconfig.json'),
-          }),
-          createNodeResolver(),
-        ],
+export default defineConfig([
+  ...styleCore,
+  {
+    languageOptions: {
+      parserOptions: {
+        tsconfigRootDir: __dirname,
       },
     },
-  ]);
-  ```
+    settings: {
+      'import-x/resolver-next': [
+        createTypeScriptImportResolver({
+          project: path.resolve(__dirname, 'tsconfig.json'),
+        }),
+        createNodeResolver(),
+      ],
+    },
+  },
+]);
+```
 
 </details>
 
@@ -169,20 +184,21 @@ curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/temp
   
   Also spread `styleReact` from `@timobechtel/style/eslint/react.js`:
 
-  ```js
-  import styleCore from '@timobechtel/style/eslint/core.js';
-  import styleReact from '@timobechtel/style/eslint/react.js';
-  import { defineConfig } from 'eslint/config';
+```js
+import styleCore from '@timobechtel/style/eslint/core.js';
+import styleReact from '@timobechtel/style/eslint/react.js';
+import { defineConfig } from 'eslint/config';
 
-  export default defineConfig([
-    ...styleCore,
-    ...styleReact,
-    // ... your config
-  ]);
-  ```
+export default defineConfig([
+  ...styleCore,
+  ...styleReact,
+  // ... your config
+]);
+```
 
-  Example config:
-  <https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/eslint/react/eslint.config.js>
+Example config:
+<https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/eslint/react/eslint.config.js>
+
 </details>
 
 #### Migration from v1.x
