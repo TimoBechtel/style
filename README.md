@@ -4,10 +4,16 @@
 
 Highly opinionated configuration files for typescript projects.
 
-> [!WARNING]  
-> Make sure to first commit your code before running the following commands. To allow you to easily revert the changes.
+> [!TIP] Agentic setup
+> Let your agent set this up for you:
+>
+> ```
+> Read https://raw.githubusercontent.com/TimoBechtel/style/main/skills/setup-style/SKILL.md and configure.
+> ```
 
 ## Usage
+
+> Make sure to first commit your code before running the following commands. This allows you to revert changes easily.
 
 ```bash
 npm i -D @timobechtel/style typescript
@@ -31,7 +37,7 @@ npm i -D oxfmt
 gh get timobechtel/style templates/.oxfmtrc.json
 ```
 
-- [oxfmt template](https://github.com/TimoBechtel/style/tree/refs/heads/main/templates/.oxfmtrc.json)
+- [oxfmt template](https://github.com/TimoBechtel/style/blob/main/templates/.oxfmtrc.json)
 
 ### [Oxlint](https://oxc.rs/docs/guide/usage/linter.html)
 
@@ -47,7 +53,7 @@ Core:
 gh get timobechtel/style templates/.oxlintrc.jsonc
 ```
 
-- [oxlint core template](https://github.com/TimoBechtel/style/tree/refs/heads/main/templates/.oxlintrc.jsonc)
+- [oxlint core template](https://github.com/TimoBechtel/style/blob/main/templates/.oxlintrc.jsonc)
 
 React:
 
@@ -55,7 +61,7 @@ React:
 gh get timobechtel/style templates/react/.oxlintrc.jsonc
 ```
 
-- [oxlint react template](https://github.com/TimoBechtel/style/tree/refs/heads/main/templates/react/.oxlintrc.jsonc)
+- [oxlint react template](https://github.com/TimoBechtel/style/blob/main/templates/react/.oxlintrc.jsonc)
 
 <details>
   <summary>Migrating to Oxlint? - `File '@timobechtel/style/tsconfig/core' not found.`</summary>
@@ -96,7 +102,7 @@ For existing projects or templates, I recomment leaving the config as-is and add
 gh get timobechtel/style templates/tsconfig.json
 ```
 
-- [tsconfig core template](https://github.com/TimoBechtel/style/tree/refs/heads/main/templates/tsconfig.json)
+- [tsconfig core template](https://github.com/TimoBechtel/style/blob/main/templates/tsconfig.json)
 
 #### Or with React
 
@@ -159,7 +165,7 @@ npm i -D prettier
 gh get timobechtel/style templates/.prettierrc
 ```
 
-- [prettier template](https://github.com/TimoBechtel/style/tree/refs/heads/main/templates/.prettierrc)
+- [prettier template](https://github.com/TimoBechtel/style/blob/main/templates/.prettierrc)
 
 <details>
   <summary>Extend / customize config</summary>
@@ -204,7 +210,7 @@ npm i -D eslint
 gh get timobechtel/style templates/eslint.config.js
 ```
 
-- [eslint core template](https://github.com/TimoBechtel/style/tree/refs/heads/main/templates/eslint.config.js)
+- [eslint core template](https://github.com/TimoBechtel/style/blob/main/templates/eslint.config.js)
 
 Note: If your project is not ESM (no `"type": "module"` in `package.json`), rename the file to `eslint.config.mjs`.
 
@@ -251,7 +257,7 @@ export default defineConfig([
 gh get timobechtel/style templates/react/eslint.config.js
 ```
 
-- [eslint react template](https://github.com/TimoBechtel/style/tree/refs/heads/main/templates/react/eslint.config.js)
+- [eslint react template](https://github.com/TimoBechtel/style/blob/main/templates/react/eslint.config.js)
 
 <details>
   <summary>Or manually</summary>
@@ -269,9 +275,6 @@ export default defineConfig([
   // ... your config
 ]);
 ```
-
-Example config:
-<https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/react/eslint.config.js>
 
 </details>
 
@@ -313,4 +316,10 @@ npm i -D semantic-release @semantic-release/changelog @semantic-release/git
 gh get timobechtel/style templates/.releaserc.json
 ```
 
-- [semantic-release template](https://github.com/TimoBechtel/style/tree/refs/heads/main/templates/.releaserc.json)
+- [semantic-release template](https://github.com/TimoBechtel/style/blob/main/templates/.releaserc.json)
+
+### Agent Skills
+
+```bash
+npx skills add timobechtel/style@setup-style
+```
