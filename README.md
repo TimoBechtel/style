@@ -2,7 +2,7 @@
 
 > Roll in style.
 
-Highly opinionated configuration files for typescript projects. Inspired by [@vercel/style-guide](https://github.com/vercel/style-guide)
+Highly opinionated configuration files for typescript projects.
 
 > [!WARNING]  
 > Make sure to first commit your code before running the following commands. To allow you to easily revert the changes.
@@ -10,16 +10,28 @@ Highly opinionated configuration files for typescript projects. Inspired by [@ve
 ## Usage
 
 ```bash
-npm i -D @timobechtel/style prettier "eslint@^9" typescript
+npm i -D @timobechtel/style typescript
 ```
 
-### Oxfmt
+### [Oxfmt](https://oxc.rs/docs/guide/usage/formatter.html)
+
+> Code formatter, replaces Prettier.
+
+```bash
+npm i -D oxfmt
+```
 
 ```bash
 curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/.oxfmtrc.json
 ```
 
-### Oxlint
+### [Oxlint](https://oxc.rs/docs/guide/usage/linter.html)
+
+> Faster ESLint alternative. 5x faster in personal testing.
+
+```bash
+npm i -D oxlint
+```
 
 Core:
 
@@ -33,9 +45,101 @@ React:
 curl -o .oxlintrc.jsonc https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/oxlint/react/.oxlintrc.jsonc
 ```
 
-Note: The preset enables type-aware rules by default and ships the required tsgolint runtime as a dependency.
+<details>
+  <summary>Migrating to Oxlint? - `File '@timobechtel/style/tsconfig/core' not found.`</summary>
+
+  When migrating from ESLint to Oxlint, you might need to update the `tsconfig.json` file:
+
+  ```diff
+  - "extends": ["@timobechtel/style/tsconfig/core"]
+  + "extends": ["@timobechtel/style/tsconfig/core.json"]
+  ```
+
+  ```diff
+  - "extends": ["@timobechtel/style/tsconfig/react"]
+  + "extends": ["@timobechtel/style/tsconfig/react.json"]
+  ```
+
+  > tsgolint requires a file extension to resolve the config file.
+
+</details>
+
+### Typescript
+
+> Pre-configured tsconfig files.
+
+#### Existing tsconfig
+
+For existing projects or templates, I recomment leaving the config as-is and adding this preset to the extends array.
+
+```json
+{
+  "extends": ["@timobechtel/style/tsconfig/core.json"]
+}
+```
+
+#### New tsconfig
+
+```bash
+curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/tsconfig/core/tsconfig.json
+```
+
+#### Or with React
+
+```bash
+curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/tsconfig/react/tsconfig.json
+```
+
+<details>
+  <summary>Or manually</summary>
+
+Copy to `tsconfig.json`:
+
+```json
+{
+  "extends": "@timobechtel/style/tsconfig/react.json"
+}
+```
+
+  </details>
+
+#### Expo
+
+With expo make sure to add `"moduleResolution": "bundler"` to the `compilerOptions`, otherwise certain routing types might break.
+
+<details>
+  <summary>Example</summary>
+
+Copy to `tsconfig.json`:
+
+```json
+{
+  "extends": ["expo/tsconfig.base", "@timobechtel/style/tsconfig/core.json"],
+  "compilerOptions": {
+    "moduleResolution": "bundler", // <-- this is important
+    "strict": true,
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"]
+}
+```
+
+  </details>
 
 ### Prettier
+
+> [!NOTE] Deprecated
+> Prettier config will not be updated anymore. I recommend using [Oxfmt](#oxfmt) instead.
+> oxfmt has been configured to match prettier rules, however this might drift in future versions.
+
+<details>
+  <summary>Setup prettier anyways</summary>
+
+```bash
+npm i -D prettier
+```
 
 ```bash
 curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/.prettierrc
@@ -65,70 +169,20 @@ export default {
 ```
 
 </details>
-
-### Typescript
-
-#### Existing tsconfig
-
-For existing projects or templates, I recomment leaving the config as-is and adding this preset to the extends array.
-
-```json
-{
-  "extends": ["@timobechtel/style/tsconfig/core.json"]
-}
-```
-
-#### New tsconfig
-
-```bash
-curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/tsconfig/core/tsconfig.json
-```
-
-#### Expo
-
-With expo make sure to add `"moduleResolution": "bundler"` to the `compilerOptions`, otherwise certain routing types might break.
-
-<details>
-  <summary>Example</summary>
-
-Copy to `tsconfig.json`:
-
-```json
-{
-  "extends": ["expo/tsconfig.base", "@timobechtel/style/tsconfig/core.json"],
-  "compilerOptions": {
-    "moduleResolution": "bundler", // <-- this is important
-    "strict": true,
-    "paths": {
-      "@/*": ["./*"]
-    }
-  },
-  "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"]
-}
-```
-
-  </details>
-
-#### Or with React
-
-```bash
-curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/tsconfig/react/tsconfig.json
-```
-
-<details>
-  <summary>Or manually</summary>
-
-Copy to `tsconfig.json`:
-
-```json
-{
-  "extends": "@timobechtel/style/tsconfig/react.json"
-}
-```
-
-  </details>
+</details>
 
 ### Eslint
+
+> [!NOTE] Deprecated
+> Eslint config will be removed in a future version. Use [Oxlint](#oxlint) instead.
+> oxlint has been configured to match existing eslint rules, however this might drift in future versions.
+
+<details>
+  <summary>Setup eslint anyways</summary>
+
+```bash
+npm i -D eslint
+```
 
 ```bash
 curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/eslint/core/eslint.config.js
@@ -224,6 +278,8 @@ Add the following to your VSCode config, e.g. `.vscode/settings.json`
   }
 }
 ```
+
+</details>
 
 ### semantic-release
 
