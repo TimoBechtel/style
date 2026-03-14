@@ -11,24 +11,7 @@
     "react"
   ],
   "rules": {
-    "react/exhaustive-deps": "error",
-    "react/rules-of-hooks": "error",
-    "react/display-name": "error",
-    "react/jsx-key": "error",
-    "react/jsx-no-comment-textnodes": "error",
-    "react/jsx-no-duplicate-props": "error",
-    "react/jsx-no-undef": "error",
-    "react/no-children-prop": "error",
-    "react/no-danger-with-children": "error",
-    "react/no-direct-mutation-state": "error",
-    "react/no-find-dom-node": "error",
-    "react/no-is-mounted": "error",
-    "react/no-render-return-value": "error",
-    "react/no-string-refs": "error",
-    "react/no-unescaped-entities": "error",
-    "react/no-unknown-property": "error",
-    "react/require-render-return": "error",
-    "react/button-has-type": "error",
+    // ---- style rules ----
     "react/jsx-boolean-value": "warn",
     "react/jsx-curly-brace-presence": [
       "warn",
@@ -39,6 +22,10 @@
       }
     ],
     "react/jsx-fragments": "warn",
+    "react/jsx-pascal-case": "warn",
+    "react/self-closing-comp": "warn",
+
+    // ---- pedantic rules ----
     "react/jsx-no-target-blank": [
       "error",
       {
@@ -51,7 +38,9 @@
         "allowExpressions": true
       }
     ],
-    "react/jsx-pascal-case": "warn",
-    "react/self-closing-comp": "warn"
+
+    // ---- restriction rules ----
+    "react/no-unknown-property": "error",
+    "react/button-has-type": "error"
   }
 }
