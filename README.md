@@ -2,49 +2,89 @@
 
 > Roll in style.
 
-Highly opinionated configuration files for typescript projects. Inspired by [@vercel/style-guide](https://github.com/vercel/style-guide)
+Highly opinionated configuration files for typescript projects.
 
-> [!WARNING]  
-> Make sure to first commit your code before running the following commands. To allow you to easily revert the changes.
+> [!TIP]
+> Let your agent set this up for you:
+>
+> ```
+> Read https://raw.githubusercontent.com/TimoBechtel/style/main/skills/setup-style/SKILL.md and configure.
+> ```
 
 ## Usage
 
-```bash
-npm i -D @timobechtel/style prettier "eslint@^9" typescript
-```
-
-### Prettier
+> Make sure to first commit your code before running the following commands. This allows you to revert changes easily.
 
 ```bash
-curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/.prettierrc
+npm i -D @timobechtel/style typescript
 ```
+
+Install gh-get to make it easier to download the template files:
+
+```bash
+gh extension install timobechtel/gh-get
+```
+
+### [Oxfmt](https://oxc.rs/docs/guide/usage/formatter.html)
+
+> Code formatter, replaces Prettier.
+
+```bash
+npm i -D oxfmt
+```
+
+```bash
+gh get timobechtel/style templates/.oxfmtrc.json
+```
+
+- [oxfmt template](https://github.com/TimoBechtel/style/blob/main/templates/.oxfmtrc.json)
+
+### [Oxlint](https://oxc.rs/docs/guide/usage/linter.html)
+
+> Faster ESLint alternative. 5x faster in personal testing.
+
+```bash
+npm i -D oxlint
+```
+
+Core:
+
+```bash
+gh get timobechtel/style templates/.oxlintrc.jsonc
+```
+
+- [oxlint core template](https://github.com/TimoBechtel/style/blob/main/templates/.oxlintrc.jsonc)
+
+React:
+
+```bash
+gh get timobechtel/style templates/react/.oxlintrc.jsonc
+```
+
+- [oxlint react template](https://github.com/TimoBechtel/style/blob/main/templates/react/.oxlintrc.jsonc)
 
 <details>
-  <summary>Extend / customize config</summary>
+  <summary>Migrating to Oxlint? - `File '@timobechtel/style/tsconfig/core' not found.`</summary>
 
-  Need to extend the config, e.g. adding plugins?
+  When migrating from ESLint to Oxlint, you might need to update the `tsconfig.json` file:
 
-  ```bash
-  curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/.prettierrc.mjs
+  ```diff
+  - "extends": ["@timobechtel/style/tsconfig/core"]
+  + "extends": ["@timobechtel/style/tsconfig/core.json"]
   ```
 
-  Create a .prettierrc.mjs file and import the config, like this:
-  
-  ```js
-  import config from '@timobechtel/style/prettier/index.mjs';
-
-  /**
-   * @type {import("prettier").Config}
-   */
-  export default {
-    ...config,
-    // your config
-  }
+  ```diff
+  - "extends": ["@timobechtel/style/tsconfig/react"]
+  + "extends": ["@timobechtel/style/tsconfig/react.json"]
   ```
-  
+
+  > tsgolint requires a file extension to resolve the config file.
+
 </details>
 
 ### Typescript
+
+> Pre-configured tsconfig files.
 
 #### Existing tsconfig
 
@@ -52,15 +92,36 @@ For existing projects or templates, I recomment leaving the config as-is and add
 
 ```json
 {
-  "extends": ["@timobechtel/style/tsconfig/core"]
+  "extends": ["@timobechtel/style/tsconfig/core.json"]
 }
 ```
 
 #### New tsconfig
 
 ```bash
-curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/tsconfig/core/tsconfig.json
+gh get timobechtel/style templates/tsconfig.json
 ```
+
+- [tsconfig core template](https://github.com/TimoBechtel/style/blob/main/templates/tsconfig.json)
+
+#### Or with React
+
+```bash
+gh get timobechtel/style templates/react/tsconfig.json
+```
+
+<details>
+  <summary>Or manually</summary>
+
+Copy to `tsconfig.json`:
+
+```json
+{
+  "extends": "@timobechtel/style/tsconfig/react.json"
+}
+```
+
+  </details>
 
 #### Expo
 
@@ -69,120 +130,150 @@ With expo make sure to add `"moduleResolution": "bundler"` to the `compilerOptio
 <details>
   <summary>Example</summary>
 
-  Copy to `tsconfig.json`:
+Copy to `tsconfig.json`:
 
-  ```json
-  {
-    "extends": ["expo/tsconfig.base", "@timobechtel/style/tsconfig/core"],
-    "compilerOptions": {
-      "moduleResolution": "bundler", // <-- this is important
-      "strict": true,
-      "paths": {
-        "@/*": [
-          "./*"
-        ]
-      }
-    },
-    "include": [
-      "**/*.ts",
-      "**/*.tsx",
-      ".expo/types/**/*.ts",
-      "expo-env.d.ts"
-    ]
-  }
-  ```
-
-  </details>
-
-#### Or with React
-
-```bash
-curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/tsconfig/react/tsconfig.json
+```json
+{
+  "extends": ["expo/tsconfig.base", "@timobechtel/style/tsconfig/core.json"],
+  "compilerOptions": {
+    "moduleResolution": "bundler", // <-- this is important
+    "strict": true,
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"]
+}
 ```
 
-<details>
-  <summary>Or manually</summary>
-
-  Copy to `tsconfig.json`:
-
-  ```json
-  { 
-    "extends": "@timobechtel/style/tsconfig/react"
-  }
-  ```
-
   </details>
+
+### Prettier
+
+> Prettier config will not be updated anymore. I recommend using [Oxfmt](#oxfmt) instead.
+> oxfmt has been configured to match prettier rules, however this might drift in future versions.
+
+<details>
+  <summary>Setup prettier anyways</summary>
+
+```bash
+npm i -D prettier
+```
+
+```bash
+gh get timobechtel/style templates/.prettierrc
+```
+
+- [prettier template](https://github.com/TimoBechtel/style/blob/main/templates/.prettierrc)
+
+<details>
+  <summary>Extend / customize config</summary>
+
+Need to extend the config, e.g. adding plugins?
+
+```bash
+gh get timobechtel/style templates/.prettierrc.mjs
+```
+
+Create a .prettierrc.mjs file and import the config, like this:
+
+```js
+import config from '@timobechtel/style/prettier/index.mjs';
+
+/**
+ * @type {import("prettier").Config}
+ */
+export default {
+  ...config,
+  // your config
+};
+```
+
+</details>
+</details>
 
 ### Eslint
 
+> Eslint config will be removed in a future version. Use [Oxlint](#oxlint) instead.
+> oxlint has been configured to match existing eslint rules, however this might drift in future versions.
+
+<details>
+  <summary>Setup eslint anyways</summary>
+
 ```bash
-curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/eslint/core/eslint.config.js
+npm i -D eslint
 ```
+
+```bash
+gh get timobechtel/style templates/eslint.config.js
+```
+
+- [eslint core template](https://github.com/TimoBechtel/style/blob/main/templates/eslint.config.js)
 
 Note: If your project is not ESM (no `"type": "module"` in `package.json`), rename the file to `eslint.config.mjs`.
 
 <details>
   <summary>Or manually</summary>
 
-  Copy the following to an `eslint.config.js`:
+Copy the following to an `eslint.config.js`:
 
-  ```js
-  import path from 'node:path';
-  import { fileURLToPath } from 'node:url';
-  import { defineConfig } from 'eslint/config';
-  import styleCore from '@timobechtel/style/eslint/core.js';
-  import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
-  import { createNodeResolver } from 'eslint-plugin-import-x';
+```js
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { defineConfig } from 'eslint/config';
+import styleCore from '@timobechtel/style/eslint/core.js';
+import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
+import { createNodeResolver } from 'eslint-plugin-import-x';
 
-  const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-  export default defineConfig([
-    ...styleCore,
-    {
-      languageOptions: {
-        parserOptions: {
-          tsconfigRootDir: __dirname,
-        },
-      },
-      settings: {
-        'import-x/resolver-next': [
-          createTypeScriptImportResolver({
-            project: path.resolve(__dirname, 'tsconfig.json'),
-          }),
-          createNodeResolver(),
-        ],
+export default defineConfig([
+  ...styleCore,
+  {
+    languageOptions: {
+      parserOptions: {
+        tsconfigRootDir: __dirname,
       },
     },
-  ]);
-  ```
+    settings: {
+      'import-x/resolver-next': [
+        createTypeScriptImportResolver({
+          project: path.resolve(__dirname, 'tsconfig.json'),
+        }),
+        createNodeResolver(),
+      ],
+    },
+  },
+]);
+```
 
 </details>
 
 #### React
 
 ```bash
-curl -O https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/eslint/react/eslint.config.js
+gh get timobechtel/style templates/react/eslint.config.js
 ```
+
+- [eslint react template](https://github.com/TimoBechtel/style/blob/main/templates/react/eslint.config.js)
 
 <details>
   <summary>Or manually</summary>
   
   Also spread `styleReact` from `@timobechtel/style/eslint/react.js`:
 
-  ```js
-  import styleCore from '@timobechtel/style/eslint/core.js';
-  import styleReact from '@timobechtel/style/eslint/react.js';
-  import { defineConfig } from 'eslint/config';
+```js
+import styleCore from '@timobechtel/style/eslint/core.js';
+import styleReact from '@timobechtel/style/eslint/react.js';
+import { defineConfig } from 'eslint/config';
 
-  export default defineConfig([
-    ...styleCore,
-    ...styleReact,
-    // ... your config
-  ]);
-  ```
+export default defineConfig([
+  ...styleCore,
+  ...styleReact,
+  // ... your config
+]);
+```
 
-  Example config:
-  <https://raw.githubusercontent.com/TimoBechtel/style/refs/heads/main/templates/eslint/react/eslint.config.js>
 </details>
 
 #### Migration from v1.x
@@ -209,6 +300,8 @@ Add the following to your VSCode config, e.g. `.vscode/settings.json`
 }
 ```
 
+</details>
+
 ### semantic-release
 
 This repo also contains a [semantic-release](https://github.com/semantic-release/semantic-release) configuration.
@@ -218,5 +311,13 @@ npm i -D semantic-release @semantic-release/changelog @semantic-release/git
 ```
 
 ```bash
-echo '{ "extends": "@timobechtel/style/semantic-release/index.cjs" }' > .releaserc.json
+gh get timobechtel/style templates/.releaserc.json
+```
+
+- [semantic-release template](https://github.com/TimoBechtel/style/blob/main/templates/.releaserc.json)
+
+### Agent Skills
+
+```bash
+npx skills add timobechtel/style@setup-style
 ```

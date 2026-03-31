@@ -1,0 +1,212 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": [
+    "unicorn",
+    "typescript",
+    "oxc",
+    "import"
+  ],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "error",
+    "pedantic": "error",
+    "nursery": "error"
+  },
+  "rules": {
+    // ---- style rules ----
+    "curly": [
+      "warn",
+      "multi-line"
+    ],
+    "default-case-last": "error",
+    "default-param-last": "error",
+    "import/first": "error",
+    "import/no-duplicates": "warn",
+    "new-cap": [
+      "error",
+      {
+        "capIsNew": false
+      }
+    ],
+    "no-label-var": "error",
+    "prefer-const": "warn",
+    "prefer-object-spread": "warn",
+    "prefer-rest-params": "error",
+    "prefer-spread": "error",
+    "prefer-template": "warn",
+    "typescript/adjacent-overload-signatures": "error",
+    "typescript/array-type": "error",
+    "typescript/ban-tslint-comment": "error",
+    "typescript/class-literal-property-style": "error",
+    "typescript/consistent-generic-constructors": "error",
+    "typescript/consistent-type-assertions": "error",
+    "typescript/consistent-type-imports": [
+      "error",
+      {
+        "prefer": "type-imports",
+        "fixStyle": "inline-type-imports"
+      }
+    ],
+    "typescript/no-inferrable-types": "error",
+    "typescript/prefer-for-of": "error",
+    "typescript/prefer-function-type": "error",
+    "typescript/prefer-reduce-type-parameter": "error",
+    "typescript/prefer-return-this-type": "error",
+    "typescript/unified-signatures": "error",
+    "unicorn/error-message": "error",
+    "unicorn/no-zero-fractions": "warn",
+    "unicorn/numeric-separators-style": "error",
+    "unicorn/prefer-array-index-of": "error",
+    "unicorn/prefer-default-parameters": "warn",
+    "unicorn/prefer-includes": "error",
+    "unicorn/prefer-keyboard-event-key": "error",
+    "unicorn/prefer-logical-operator-over-ternary": "error",
+    "unicorn/prefer-modern-dom-apis": "error",
+    "unicorn/prefer-negative-index": "error",
+    "unicorn/prefer-object-from-entries": "error",
+    "unicorn/prefer-reflect-apply": "error",
+    "unicorn/prefer-spread": "error",
+    "unicorn/prefer-ternary": [
+      "warn",
+      "only-single-line"
+    ],
+    "unicorn/require-array-join-separator": "error",
+    "unicorn/switch-case-braces": "error",
+
+    // ---- correctness rules ----
+    "import/default": "off",
+    "import/namespace": "off",
+    "no-unused-vars": [
+      "error",
+      {
+        "args": "after-used",
+        "argsIgnorePattern": "^_",
+        "ignoreRestSiblings": false,
+        "vars": "all",
+        "varsIgnorePattern": "^_"
+      }
+    ],
+    "no-useless-rename": "warn",
+    "typescript/require-array-sort-compare": [
+      "error",
+      {
+        "ignoreStringArrays": true
+      }
+    ],
+    "unicorn/no-useless-fallback-in-spread": "warn",
+    "unicorn/no-useless-length-check": "warn",
+
+    // ---- suspicious rules ----
+    "import/no-named-as-default": "warn",
+    "import/no-named-as-default-member": "warn",
+    "unicorn/consistent-function-scoping": [
+      "warn",
+      {
+        "checkArrowFunctions": false
+      }
+    ],
+
+    // ---- pedantic rules ----
+    "max-depth": [
+      "warn",
+      4
+    ],
+    "no-lonely-if": "warn",
+    "typescript/no-misused-promises": [
+      "error",
+      {
+        "checksVoidReturn": false
+      }
+    ],
+    "unicorn/escape-case": "warn",
+    "unicorn/no-unreadable-iife": "warn",
+    "unicorn/prefer-event-target": "warn",
+
+    // ---- restriction rules ----
+    "no-alert": "error",
+    "no-console": [
+      "error",
+      {
+        "allow": [
+          "warn",
+          "error",
+          "clear",
+          "info"
+        ]
+      }
+    ],
+    "no-restricted-globals": [
+      "error",
+      "event",
+      "name"
+    ],
+    "no-var": "error",
+    "typescript/no-dynamic-delete": "error",
+    "typescript/no-empty-object-type": "error",
+    "typescript/no-explicit-any": "error",
+    "typescript/no-import-type-side-effects": "error",
+    "typescript/no-invalid-void-type": "error",
+    "typescript/no-namespace": "error",
+    "typescript/no-non-null-asserted-nullish-coalescing": "error",
+    "typescript/no-non-null-assertion": "error",
+    "typescript/no-require-imports": "error",
+    "typescript/non-nullable-type-assertion-style": "error",
+    "typescript/prefer-literal-enum-member": "error",
+    "typescript/use-unknown-in-catch-callback-variable": "error",
+    "unicorn/prefer-modern-math-apis": "error",
+    "unicorn/prefer-node-protocol": "error",
+    "unicorn/prefer-number-properties": [
+      "error",
+      {
+        "checkInfinity": false
+      }
+    ],
+
+    // ---- perf rules ----
+    "unicorn/prefer-array-find": "error",
+    "unicorn/prefer-array-flat-map": "error",
+    "unicorn/prefer-set-has": "error",
+
+    // ---- nursery rules ----
+    "typescript/consistent-type-exports": [
+      "error",
+      {
+        "fixMixedExportsWithInlineTypeSpecifier": true
+      }
+    ],
+    "typescript/prefer-regexp-exec": "warn",
+
+    // these are mostly handled by typescript compiler
+    "getter-return": "off",
+    "no-undef": "off",
+    "no-unreachable": "off",
+    "import/named": "off",
+    "import/export": "off",
+
+    // new oxlint rules in nursery below that were not configured in eslint configs before
+
+    // report duplicate code in branches
+    "oxc/branches-sharing-code": "warn",
+    // prevent mixing value and non-value returns in functions
+    "typescript/consistent-return": "warn",
+    "typescript/no-unnecessary-qualifier": "warn",
+    "typescript/prefer-readonly": "warn",
+    // this is nice, but adds a lot of noise to existing codebases
+    "typescript/prefer-readonly-parameter-types": "off",
+    "typescript/strict-void-return": "off"
+
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/*.test.ts",
+        "**/*.test.tsx",
+        "**/*.spec.ts",
+        "**/*.spec.tsx"
+      ],
+      "rules": {
+        "typescript/ban-ts-comment": "off"
+      }
+    }
+  ]
+}

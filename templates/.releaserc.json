@@ -1,0 +1,3 @@
+{
+  "extends": "@timobechtel/style/semantic-release/index.cjs"
+}

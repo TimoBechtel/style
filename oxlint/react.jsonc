@@ -1,0 +1,46 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "extends": [
+    "./core.jsonc"
+  ],
+  "plugins": [
+    "unicorn",
+    "typescript",
+    "oxc",
+    "import",
+    "react"
+  ],
+  "rules": {
+    // ---- style rules ----
+    "react/jsx-boolean-value": "warn",
+    "react/jsx-curly-brace-presence": [
+      "warn",
+      {
+        "props": "never",
+        "children": "ignore",
+        "propElementValues": "always"
+      }
+    ],
+    "react/jsx-fragments": "warn",
+    "react/jsx-pascal-case": "warn",
+    "react/self-closing-comp": "warn",
+
+    // ---- pedantic rules ----
+    "react/jsx-no-target-blank": [
+      "error",
+      {
+        "allowReferrer": true
+      }
+    ],
+    "react/jsx-no-useless-fragment": [
+      "warn",
+      {
+        "allowExpressions": true
+      }
+    ],
+
+    // ---- restriction rules ----
+    "react/no-unknown-property": "error",
+    "react/button-has-type": "error"
+  }
+}
