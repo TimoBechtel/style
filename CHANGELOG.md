@@ -1,3 +1,15 @@
+# [2.1.0](https://github.com/TimoBechtel/style/compare/v2.0.1...v2.1.0) (2026-03-31)
+
+
+### Bug Fixes
+
+* **oxlint:** move type-aware option to root config template ([248d0e4](https://github.com/TimoBechtel/style/commit/248d0e4f203f3c42031f5f14927d660917f7d242))
+
+
+### Features
+
+* add oxlint and oxfmt presets ([753f3ee](https://github.com/TimoBechtel/style/commit/753f3eed5d59799f4f8fa17cd7621f8343e7740a))
+
 ## [2.0.1](https://github.com/TimoBechtel/style/compare/v2.0.0...v2.0.1) (2026-02-20)
 
 
