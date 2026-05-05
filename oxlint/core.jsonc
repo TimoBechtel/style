@@ -6,6 +6,9 @@
     "oxc",
     "import"
   ],
+  "jsPlugins": [
+    "oxlint-plugin-complexity"
+  ],
   "categories": {
     "correctness": "error",
     "suspicious": "error",
@@ -187,6 +190,14 @@
 
     // report duplicate code in branches
     "oxc/branches-sharing-code": "warn",
+    "complexity/complexity": [
+      "warn",
+      {
+        "cyclomatic": 20,
+        "cognitive": 15,
+        "minLines": 15
+      }
+    ],
     // prevent mixing value and non-value returns in functions
     "typescript/consistent-return": "warn",
     "typescript/no-unnecessary-qualifier": "warn",

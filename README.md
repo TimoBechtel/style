@@ -44,7 +44,7 @@ gh get timobechtel/style templates/.oxfmtrc.json
 > Faster ESLint alternative. 5x faster in personal testing.
 
 ```bash
-npm i -D oxlint
+npm i -D oxlint @oxlint/plugins oxlint-plugin-complexity
 ```
 
 Core:
@@ -54,6 +54,7 @@ gh get timobechtel/style templates/.oxlintrc.jsonc
 ```
 
 - [oxlint core template](https://github.com/TimoBechtel/style/blob/main/templates/.oxlintrc.jsonc)
+- Includes the `oxlint-plugin-complexity` rule with sensible defaults (`cyclomatic: 20`, `cognitive: 15`, `minLines: 15`) to catch overly complex functions without flagging short helpers.
 
 React:
 
@@ -62,23 +63,24 @@ gh get timobechtel/style templates/react/.oxlintrc.jsonc
 ```
 
 - [oxlint react template](https://github.com/TimoBechtel/style/blob/main/templates/react/.oxlintrc.jsonc)
+- React projects inherit the same complexity checks from the shared core config.
 
 <details>
   <summary>Migrating to Oxlint? - `File '@timobechtel/style/tsconfig/core' not found.`</summary>
 
-  When migrating from ESLint to Oxlint, you might need to update the `tsconfig.json` file:
+When migrating from ESLint to Oxlint, you might need to update the `tsconfig.json` file:
 
-  ```diff
-  - "extends": ["@timobechtel/style/tsconfig/core"]
-  + "extends": ["@timobechtel/style/tsconfig/core.json"]
-  ```
+```diff
+- "extends": ["@timobechtel/style/tsconfig/core"]
++ "extends": ["@timobechtel/style/tsconfig/core.json"]
+```
 
-  ```diff
-  - "extends": ["@timobechtel/style/tsconfig/react"]
-  + "extends": ["@timobechtel/style/tsconfig/react.json"]
-  ```
+```diff
+- "extends": ["@timobechtel/style/tsconfig/react"]
++ "extends": ["@timobechtel/style/tsconfig/react.json"]
+```
 
-  > tsgolint requires a file extension to resolve the config file.
+> tsgolint requires a file extension to resolve the config file.
 
 </details>
 

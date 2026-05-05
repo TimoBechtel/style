@@ -22,7 +22,9 @@
     "semantic-release": "^25.0.3",
     "typescript": "^5.9.3",
     "oxlint": "^1.55.0",
-    "oxfmt": "^0.40.0"
+    "oxfmt": "^0.40.0",
+    "@oxlint/plugins": "^1.63.0",
+    "oxlint-plugin-complexity": "^2.1.2"
   },
   "peerDependencies": {
     "eslint": "^9.39.3",
@@ -30,7 +32,9 @@
     "semantic-release": "^25.0.3",
     "typescript": "^5.9.3",
     "oxlint": "^1.55.0",
-    "oxfmt": "^0.40.0"
+    "oxfmt": "^0.40.0",
+    "@oxlint/plugins": "^1.63.0",
+    "oxlint-plugin-complexity": "^2.1.2"
   },
   "dependencies": {
     "@eslint/js": "^9.39.3",
