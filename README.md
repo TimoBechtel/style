@@ -54,7 +54,6 @@ gh get timobechtel/style templates/.oxlintrc.jsonc
 ```
 
 - [oxlint core template](https://github.com/TimoBechtel/style/blob/main/templates/.oxlintrc.jsonc)
-- Includes the `oxlint-plugin-complexity` rule with sensible defaults (`cyclomatic: 20`, `cognitive: 15`, `minLines: 15`) to catch overly complex functions without flagging short helpers.
 
 React:
 
@@ -63,7 +62,6 @@ gh get timobechtel/style templates/react/.oxlintrc.jsonc
 ```
 
 - [oxlint react template](https://github.com/TimoBechtel/style/blob/main/templates/react/.oxlintrc.jsonc)
-- React projects inherit the same complexity checks from the shared core config.
 
 <details>
   <summary>Migrating to Oxlint? - `File '@timobechtel/style/tsconfig/core' not found.`</summary>
