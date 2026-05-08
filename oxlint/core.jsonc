@@ -111,6 +111,8 @@
       "warn",
       4
     ],
+    "max-lines": "warn",
+    "max-lines-per-function": "warn",
     "no-lonely-if": "warn",
     "typescript/no-misused-promises": [
       "error",
