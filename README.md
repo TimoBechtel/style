@@ -44,7 +44,7 @@ gh get timobechtel/style templates/.oxfmtrc.json
 > Faster ESLint alternative. 5x faster in personal testing.
 
 ```bash
-npm i -D oxlint @oxlint/plugins oxlint-plugin-complexity
+npm i -D oxlint
 ```
 
 Core:
