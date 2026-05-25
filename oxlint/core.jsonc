@@ -111,8 +111,22 @@
       "warn",
       4
     ],
-    "max-lines": "warn",
-    "max-lines-per-function": "warn",
+    "max-lines": [
+      "error",
+      {
+        "max": 750,
+        "skipBlankLines": true,
+        "skipComments": false
+      }
+    ],
+    "max-lines-per-function": [
+      "error",
+      {
+        "max": 100,
+        "skipBlankLines": true,
+        "skipComments": false
+      }
+    ],
     "no-lonely-if": "warn",
     "typescript/no-misused-promises": [
       "error",
