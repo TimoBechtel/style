@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/TimoBechtel/style/compare/v2.1.0...v2.2.0) (2026-05-25)
+
+
+### Features
+
+* re-enable max-line and max-function-line oxlint rules ([#5](https://github.com/TimoBechtel/style/issues/5)) ([e16c53b](https://github.com/TimoBechtel/style/commit/e16c53befea32edde3bf8671022b9c876747e899))
+
 # [2.1.0](https://github.com/TimoBechtel/style/compare/v2.0.1...v2.1.0) (2026-03-31)
 
 
