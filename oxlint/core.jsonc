@@ -107,6 +107,13 @@
     ],
 
     // ---- pedantic rules ----
+    "import/max-dependencies": [
+      "error",
+      {
+        "max": 20,
+        "ignoreTypeImports": true
+      }
+    ],
     "max-depth": [
       "warn",
       4
