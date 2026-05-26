@@ -66,19 +66,19 @@ gh get timobechtel/style templates/react/.oxlintrc.jsonc
 <details>
   <summary>Migrating to Oxlint? - `File '@timobechtel/style/tsconfig/core' not found.`</summary>
 
-  When migrating from ESLint to Oxlint, you might need to update the `tsconfig.json` file:
+When migrating from ESLint to Oxlint, you might need to update the `tsconfig.json` file:
 
-  ```diff
-  - "extends": ["@timobechtel/style/tsconfig/core"]
-  + "extends": ["@timobechtel/style/tsconfig/core.json"]
-  ```
+```diff
+- "extends": ["@timobechtel/style/tsconfig/core"]
++ "extends": ["@timobechtel/style/tsconfig/core.json"]
+```
 
-  ```diff
-  - "extends": ["@timobechtel/style/tsconfig/react"]
-  + "extends": ["@timobechtel/style/tsconfig/react.json"]
-  ```
+```diff
+- "extends": ["@timobechtel/style/tsconfig/react"]
++ "extends": ["@timobechtel/style/tsconfig/react.json"]
+```
 
-  > tsgolint requires a file extension to resolve the config file.
+> tsgolint requires a file extension to resolve the config file.
 
 </details>
 

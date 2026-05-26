@@ -45,6 +45,8 @@
     "eslint-plugin-unicorn": "^63.0.0",
     "globals": "^17.3.0",
     "oxlint-tsgolint": "^0.16.0",
-    "typescript-eslint": "^8.56.0"
+    "typescript-eslint": "^8.56.0",
+    "@oxlint/plugins": "^1.63.0",
+    "oxlint-plugin-complexity": "^2.1.2"
   }
 }
