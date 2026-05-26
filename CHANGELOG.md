@@ -1,3 +1,15 @@
+# [2.3.0](https://github.com/TimoBechtel/style/compare/v2.2.0...v2.3.0) (2026-05-26)
+
+
+### Bug Fixes
+
+* configure oxlint line count limits ([c7d9ad4](https://github.com/TimoBechtel/style/commit/c7d9ad48b61d3665a439c7512eab10d6b9466b90))
+
+
+### Features
+
+* raise oxlint import dependency limit ([#6](https://github.com/TimoBechtel/style/issues/6)) ([259dc36](https://github.com/TimoBechtel/style/commit/259dc36f8df5b5994051e0ac260002eb8449941a))
+
 # [2.2.0](https://github.com/TimoBechtel/style/compare/v2.1.0...v2.2.0) (2026-05-25)
 
 
