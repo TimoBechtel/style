@@ -1,3 +1,10 @@
+# [2.4.0](https://github.com/TimoBechtel/style/compare/v2.3.0...v2.4.0) (2026-08-27)
+
+
+### Features
+
+* **react:** add strict compiler rules ([dca9cf8](https://github.com/TimoBechtel/style/commit/dca9cf8401822d91af5fc6ebd37b91718bb780d3))
+
 # [2.3.0](https://github.com/TimoBechtel/style/compare/v2.2.0...v2.3.0) (2026-05-26)
 
 
