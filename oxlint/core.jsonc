@@ -210,6 +210,12 @@
 
     // report duplicate code in branches
     "oxc/branches-sharing-code": "warn",
+    "complexity": [
+      "warn",
+      {
+        "max": 20
+      }
+    ],
     // prevent mixing value and non-value returns in functions
     "typescript/consistent-return": "warn",
     "typescript/no-unnecessary-qualifier": "warn",
