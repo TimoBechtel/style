@@ -6,7 +6,7 @@ import { createNodeResolver, importX } from 'eslint-plugin-import-x';
 import unicornPlugin from 'eslint-plugin-unicorn';
 import { defineConfig } from 'eslint/config';
 import globals from 'globals';
-import tseslint from 'typescript-eslint';
+import { configs as tseslintConfigs } from 'typescript-eslint';
 
 import baseRules from './rules/base.js';
 import importRules from './rules/import.js';
@@ -51,12 +51,12 @@ export default defineConfig([
     },
   },
 
-  ...tseslint.configs.recommended,
-  ...tseslint.configs.recommendedTypeChecked,
-  ...tseslint.configs.strict,
-  ...tseslint.configs.strictTypeChecked,
-  ...tseslint.configs.stylistic,
-  ...tseslint.configs.stylisticTypeChecked,
+  ...tseslintConfigs.recommended,
+  ...tseslintConfigs.recommendedTypeChecked,
+  ...tseslintConfigs.strict,
+  ...tseslintConfigs.strictTypeChecked,
+  ...tseslintConfigs.stylistic,
+  ...tseslintConfigs.stylisticTypeChecked,
   {
     languageOptions: {
       parserOptions: {
@@ -65,8 +65,8 @@ export default defineConfig([
     },
   },
   {
-    files: ['**/*.js'],
-    extends: [tseslint.configs.disableTypeChecked],
+    files: ['**/*.{js,mjs,cjs}'],
+    extends: [tseslintConfigs.disableTypeChecked],
   },
   {
     files: ['**/*.ts', '**/*.tsx'],
