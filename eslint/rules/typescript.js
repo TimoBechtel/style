@@ -1,4 +1,5 @@
 import { defineConfig } from 'eslint/config';
+
 import baseRules from './base.js';
 
 const noUnusedVarsConfig = baseRules[0]?.rules?.['no-unused-vars'];

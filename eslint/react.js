@@ -2,8 +2,9 @@ import prettierConfig from 'eslint-config-prettier/flat';
 import reactPlugin from 'eslint-plugin-react';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
 import { defineConfig } from 'eslint/config';
-import reactRules from './rules/react.js';
+
 import styleReactPlugin from './plugins/react.js';
+import reactRules from './rules/react.js';
 
 const mergeRules = (configs) =>
   Object.assign({}, ...configs.map((config) => config?.rules ?? {}));

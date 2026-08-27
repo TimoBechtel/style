@@ -1,23 +1,15 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": [
-    "unicorn",
-    "typescript",
-    "oxc",
-    "import"
-  ],
+  "plugins": ["unicorn", "typescript", "oxc", "import"],
   "categories": {
     "correctness": "error",
     "suspicious": "error",
     "pedantic": "error",
-    "nursery": "error"
+    "nursery": "error",
   },
   "rules": {
     // ---- style rules ----
-    "curly": [
-      "warn",
-      "multi-line"
-    ],
+    "curly": ["warn", "multi-line"],
     "default-case-last": "error",
     "default-param-last": "error",
     "import/first": "error",
@@ -25,8 +17,8 @@
     "new-cap": [
       "error",
       {
-        "capIsNew": false
-      }
+        "capIsNew": false,
+      },
     ],
     "no-label-var": "error",
     "prefer-const": "warn",
@@ -44,8 +36,8 @@
       "error",
       {
         "prefer": "type-imports",
-        "fixStyle": "inline-type-imports"
-      }
+        "fixStyle": "inline-type-imports",
+      },
     ],
     "typescript/no-inferrable-types": "error",
     "typescript/prefer-for-of": "error",
@@ -66,10 +58,7 @@
     "unicorn/prefer-object-from-entries": "error",
     "unicorn/prefer-reflect-apply": "error",
     "unicorn/prefer-spread": "error",
-    "unicorn/prefer-ternary": [
-      "warn",
-      "only-single-line"
-    ],
+    "unicorn/prefer-ternary": ["warn", "only-single-line"],
     "unicorn/require-array-join-separator": "error",
     "unicorn/switch-case-braces": "error",
 
@@ -83,15 +72,15 @@
         "argsIgnorePattern": "^_",
         "ignoreRestSiblings": false,
         "vars": "all",
-        "varsIgnorePattern": "^_"
-      }
+        "varsIgnorePattern": "^_",
+      },
     ],
     "no-useless-rename": "warn",
     "typescript/require-array-sort-compare": [
       "error",
       {
-        "ignoreStringArrays": true
-      }
+        "ignoreStringArrays": true,
+      },
     ],
     "unicorn/no-useless-fallback-in-spread": "warn",
     "unicorn/no-useless-length-check": "warn",
@@ -102,8 +91,8 @@
     "unicorn/consistent-function-scoping": [
       "warn",
       {
-        "checkArrowFunctions": false
-      }
+        "checkArrowFunctions": false,
+      },
     ],
 
     // ---- pedantic rules ----
@@ -111,35 +100,32 @@
       "error",
       {
         "max": 20,
-        "ignoreTypeImports": true
-      }
+        "ignoreTypeImports": true,
+      },
     ],
-    "max-depth": [
-      "warn",
-      4
-    ],
+    "max-depth": ["warn", 4],
     "max-lines": [
       "error",
       {
         "max": 750,
         "skipBlankLines": true,
-        "skipComments": false
-      }
+        "skipComments": false,
+      },
     ],
     "max-lines-per-function": [
       "error",
       {
         "max": 100,
         "skipBlankLines": true,
-        "skipComments": false
-      }
+        "skipComments": false,
+      },
     ],
     "no-lonely-if": "warn",
     "typescript/no-misused-promises": [
       "error",
       {
-        "checksVoidReturn": false
-      }
+        "checksVoidReturn": false,
+      },
     ],
     "unicorn/escape-case": "warn",
     "unicorn/no-unreadable-iife": "warn",
@@ -150,19 +136,10 @@
     "no-console": [
       "error",
       {
-        "allow": [
-          "warn",
-          "error",
-          "clear",
-          "info"
-        ]
-      }
+        "allow": ["warn", "error", "clear", "info"],
+      },
     ],
-    "no-restricted-globals": [
-      "error",
-      "event",
-      "name"
-    ],
+    "no-restricted-globals": ["error", "event", "name"],
     "no-var": "error",
     "typescript/no-dynamic-delete": "error",
     "typescript/no-empty-object-type": "error",
@@ -181,8 +158,8 @@
     "unicorn/prefer-number-properties": [
       "error",
       {
-        "checkInfinity": false
-      }
+        "checkInfinity": false,
+      },
     ],
 
     // ---- perf rules ----
@@ -194,8 +171,8 @@
     "typescript/consistent-type-exports": [
       "error",
       {
-        "fixMixedExportsWithInlineTypeSpecifier": true
-      }
+        "fixMixedExportsWithInlineTypeSpecifier": true,
+      },
     ],
     "typescript/prefer-regexp-exec": "warn",
 
@@ -216,8 +193,7 @@
     "typescript/prefer-readonly": "warn",
     // this is nice, but adds a lot of noise to existing codebases
     "typescript/prefer-readonly-parameter-types": "off",
-    "typescript/strict-void-return": "off"
-
+    "typescript/strict-void-return": "off",
   },
   "overrides": [
     {
@@ -225,11 +201,11 @@
         "**/*.test.ts",
         "**/*.test.tsx",
         "**/*.spec.ts",
-        "**/*.spec.tsx"
+        "**/*.spec.tsx",
       ],
       "rules": {
-        "typescript/ban-ts-comment": "off"
-      }
-    }
-  ]
+        "typescript/ban-ts-comment": "off",
+      },
+    },
+  ],
 }

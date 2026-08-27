@@ -1,4 +1,5 @@
 import { defineConfig } from 'eslint/config';
+
 import reactConfig from './react.js';
 
 export default defineConfig([
