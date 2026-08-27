@@ -133,11 +133,12 @@ Copy to `tsconfig.json`:
 }
 ```
 
-  </details>
+</details>
 
 #### Expo
 
-With expo make sure to add `"moduleResolution": "bundler"` to the `compilerOptions`, otherwise certain routing types might break.
+Let Expo own the module settings by extending its base config after the shared
+core preset.
 
 <details>
   <summary>Example</summary>
@@ -146,10 +147,8 @@ Copy to `tsconfig.json`:
 
 ```json
 {
-  "extends": ["expo/tsconfig.base", "@timobechtel/style/tsconfig/core.json"],
+  "extends": ["@timobechtel/style/tsconfig/core.json", "expo/tsconfig.base"],
   "compilerOptions": {
-    "moduleResolution": "bundler", // <-- this is important
-    "strict": true,
     "paths": {
       "@/*": ["./*"]
     }
@@ -158,7 +157,7 @@ Copy to `tsconfig.json`:
 }
 ```
 
-  </details>
+</details>
 
 ### Prettier
 

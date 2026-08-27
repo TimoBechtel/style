@@ -24,10 +24,7 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noImplicitOverride": true,
-    "noFallthroughCasesInSwitch": true,
-
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext"
+    "noFallthroughCasesInSwitch": true
   },
   "exclude": ["node_modules"]
 }

@@ -75,7 +75,8 @@ Handle these cases:
 - `extends` is an array → append preset if not already present
 - `extends` is missing → add `"extends": ["<preset path>"]`
 
-**Expo projects:** also set `compilerOptions.moduleResolution` to `"bundler"` (see [README](https://github.com/TimoBechtel/style/blob/main/README.md#expo)).
+**Expo projects:** keep `@timobechtel/style/tsconfig/core.json` before
+`expo/tsconfig.base` in `extends` so Expo owns the module settings.
 
 ## Step 7: Add npm scripts
 
