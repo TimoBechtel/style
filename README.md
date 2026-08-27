@@ -213,7 +213,7 @@ export default {
   <summary>Setup eslint anyways</summary>
 
 ```bash
-npm i -D eslint
+npm i -D eslint typescript@^6
 ```
 
 ```bash
@@ -283,7 +283,7 @@ gh get timobechtel/style templates/react/eslint.config.js
 
 <details>
   <summary>Or manually</summary>
-  
+
 ```js
 import styleCore from '@timobechtel/style/eslint/core.js';
 import styleReact from '@timobechtel/style/eslint/react-compiler.js';

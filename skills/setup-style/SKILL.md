@@ -55,6 +55,7 @@ If prettier or eslint detected, remove their packages (including eslint plugins/
 - Non-React: `./node_modules/@timobechtel/style/oxlint/core.jsonc`
 
 Add to `extends` array. Create the array if it doesn't exist.
+If repo works under typescript 7, add root-level `options.typeAware` to `true`.
 
 ## Step 6: Set up TypeScript config
 
@@ -83,14 +84,15 @@ Add/update in `package.json`:
 ```json
 {
   "scripts": {
-    "lint": "oxlint",
-    "lint:fix": "oxlint --fix",
+    "lint": "oxlint --type-check",
+    "lint:fix": "oxlint --fix --type-check",
     "format": "oxfmt --write .",
-    "format:check": "oxfmt --check .",
-    "typecheck": "tsc --noEmit"
+    "format:check": "oxfmt --check ."
   }
 }
 ```
+
+> Note: When repo does not work under typescript 7, omit --type-check.
 
 ## Summary
 
