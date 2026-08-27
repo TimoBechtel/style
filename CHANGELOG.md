@@ -1,3 +1,29 @@
+# [2.4.0](https://github.com/TimoBechtel/style/compare/v2.3.0...v2.4.0) (2026-08-27)
+
+
+### Features
+
+* **react:** add strict compiler rules ([dca9cf8](https://github.com/TimoBechtel/style/commit/dca9cf8401822d91af5fc6ebd37b91718bb780d3))
+
+# [2.3.0](https://github.com/TimoBechtel/style/compare/v2.2.0...v2.3.0) (2026-05-26)
+
+
+### Bug Fixes
+
+* configure oxlint line count limits ([c7d9ad4](https://github.com/TimoBechtel/style/commit/c7d9ad48b61d3665a439c7512eab10d6b9466b90))
+
+
+### Features
+
+* raise oxlint import dependency limit ([#6](https://github.com/TimoBechtel/style/issues/6)) ([259dc36](https://github.com/TimoBechtel/style/commit/259dc36f8df5b5994051e0ac260002eb8449941a))
+
+# [2.2.0](https://github.com/TimoBechtel/style/compare/v2.1.0...v2.2.0) (2026-05-25)
+
+
+### Features
+
+* re-enable max-line and max-function-line oxlint rules ([#5](https://github.com/TimoBechtel/style/issues/5)) ([e16c53b](https://github.com/TimoBechtel/style/commit/e16c53befea32edde3bf8671022b9c876747e899))
+
 # [2.1.0](https://github.com/TimoBechtel/style/compare/v2.0.1...v2.1.0) (2026-03-31)
 
 

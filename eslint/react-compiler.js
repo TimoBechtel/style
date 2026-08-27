@@ -1,0 +1,35 @@
+import { defineConfig } from 'eslint/config';
+import reactConfig from './react.js';
+
+export default defineConfig([
+  ...reactConfig,
+  {
+    rules: {
+      'no-restricted-imports': [
+        'error',
+        {
+          paths: [
+            {
+              name: 'react',
+              importNames: ['default', '*'],
+              allowTypeImports: true,
+              message: 'Use named React imports.',
+            },
+            {
+              name: 'react',
+              importNames: ['forwardRef'],
+              allowTypeImports: true,
+              message: 'Pass ref as a prop instead of using forwardRef.',
+            },
+            {
+              name: 'react',
+              importNames: ['memo', 'useCallback', 'useMemo'],
+              allowTypeImports: true,
+              message: 'Let React Compiler handle memoization.',
+            },
+          ],
+        },
+      ],
+    },
+  },
+]);
