@@ -1,3 +1,16 @@
+# [2.5.0](https://github.com/TimoBechtel/style/compare/v2.4.0...v2.5.0) (2026-08-27)
+
+
+### Bug Fixes
+
+* **tsconfig:** defer module settings to projects ([7608c95](https://github.com/TimoBechtel/style/commit/7608c95a7e4edaddbec4206a24d4932ea70a6ec1))
+
+
+### Features
+
+* **tooling:** align TypeScript compatibility ([38cc35e](https://github.com/TimoBechtel/style/commit/38cc35e0ed4ae8201e05830143d07737ac433b1a))
+* **tooling:** update oxc tools ([70ff664](https://github.com/TimoBechtel/style/commit/70ff664e13b95343378d1d31e90da4809b1dd46e))
+
 # [2.4.0](https://github.com/TimoBechtel/style/compare/v2.3.0...v2.4.0) (2026-08-27)
 
 
