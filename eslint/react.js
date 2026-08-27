@@ -3,6 +3,7 @@ import reactPlugin from 'eslint-plugin-react';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
 import { defineConfig } from 'eslint/config';
 import reactRules from './rules/react.js';
+import styleReactPlugin from './plugins/react.js';
 
 const mergeRules = (configs) =>
   Object.assign({}, ...configs.map((config) => config?.rules ?? {}));
@@ -15,6 +16,7 @@ export default defineConfig([
     plugins: {
       react: reactPlugin,
       'react-hooks': reactHooksPlugin,
+      'style-react': styleReactPlugin,
     },
     settings: {
       react: {

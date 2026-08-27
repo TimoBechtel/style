@@ -20,9 +20,10 @@ Read `package.json`:
 
 1. **Package manager** — detect from lock file
 2. **React** — `react` in `dependencies` or `devDependencies`
-3. **Expo** — `expo` in `dependencies`
-4. **Existing configs** — check for `.oxfmtrc.json`, `.oxlintrc.jsonc`, `tsconfig.json`
-5. **Legacy tooling** — prettier/eslint config files or packages in `devDependencies`
+3. **React Compiler** — verify that the build config enables it; an installed compiler package alone is not enough
+4. **Expo** — `expo` in `dependencies`
+5. **Existing configs** — check for `.oxfmtrc.json`, `.oxlintrc.jsonc`, `tsconfig.json`
+6. **Legacy tooling** — prettier/eslint config files or packages in `devDependencies`
 
 ## Step 2: Remove legacy tooling
 
@@ -41,14 +42,16 @@ If prettier or eslint detected, remove their packages (including eslint plugins/
 
 ## Step 5: Set up oxlint
 
-**No `.oxlintrc.jsonc`** — download template:
+**No `.oxlintrc.jsonc`** — download one template:
 
-- React: `curl -fsSL <base>/templates/react/.oxlintrc.jsonc -o .oxlintrc.jsonc`
+- React with Compiler: `curl -fsSL <base>/templates/react/.oxlintrc.jsonc -o .oxlintrc.jsonc`
+- React without Compiler: download the React template, then replace `react-compiler.jsonc` with `react.jsonc`
 - Non-React: `curl -fsSL <base>/templates/.oxlintrc.jsonc -o .oxlintrc.jsonc`
 
-**`.oxlintrc.jsonc` exists** — add style preset to `extends`, keep existing config intact:
+**`.oxlintrc.jsonc` exists** — add one style preset to `extends`, keeping the existing config intact:
 
-- React: `./node_modules/@timobechtel/style/oxlint/react.jsonc`
+- React with Compiler: `./node_modules/@timobechtel/style/oxlint/react-compiler.jsonc`
+- React without Compiler: `./node_modules/@timobechtel/style/oxlint/react.jsonc`
 - Non-React: `./node_modules/@timobechtel/style/oxlint/core.jsonc`
 
 Add to `extends` array. Create the array if it doesn't exist.

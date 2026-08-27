@@ -57,6 +57,8 @@ gh get timobechtel/style templates/.oxlintrc.jsonc
 
 React:
 
+_Assumes you are using React Compiler_
+
 ```bash
 gh get timobechtel/style templates/react/.oxlintrc.jsonc
 ```
@@ -64,21 +66,31 @@ gh get timobechtel/style templates/react/.oxlintrc.jsonc
 - [oxlint react template](https://github.com/TimoBechtel/style/blob/main/templates/react/.oxlintrc.jsonc)
 
 <details>
+  <summary>Without React Compiler</summary>
+
+```diff
+- "./node_modules/@timobechtel/style/oxlint/react-compiler.jsonc"
++ "./node_modules/@timobechtel/style/oxlint/react.jsonc"
+```
+
+</details>
+
+<details>
   <summary>Migrating to Oxlint? - `File '@timobechtel/style/tsconfig/core' not found.`</summary>
 
-  When migrating from ESLint to Oxlint, you might need to update the `tsconfig.json` file:
+When migrating from ESLint to Oxlint, you might need to update the `tsconfig.json` file:
 
-  ```diff
-  - "extends": ["@timobechtel/style/tsconfig/core"]
-  + "extends": ["@timobechtel/style/tsconfig/core.json"]
-  ```
+```diff
+- "extends": ["@timobechtel/style/tsconfig/core"]
++ "extends": ["@timobechtel/style/tsconfig/core.json"]
+```
 
-  ```diff
-  - "extends": ["@timobechtel/style/tsconfig/react"]
-  + "extends": ["@timobechtel/style/tsconfig/react.json"]
-  ```
+```diff
+- "extends": ["@timobechtel/style/tsconfig/react"]
++ "extends": ["@timobechtel/style/tsconfig/react.json"]
+```
 
-  > tsgolint requires a file extension to resolve the config file.
+> tsgolint requires a file extension to resolve the config file.
 
 </details>
 
@@ -251,6 +263,8 @@ export default defineConfig([
 
 #### React
 
+_Assumes you have React Compiler enabled._
+
 ```bash
 gh get timobechtel/style templates/react/eslint.config.js
 ```
@@ -258,13 +272,21 @@ gh get timobechtel/style templates/react/eslint.config.js
 - [eslint react template](https://github.com/TimoBechtel/style/blob/main/templates/react/eslint.config.js)
 
 <details>
+  <summary>Without React Compiler</summary>
+
+```diff
+- import styleReact from '@timobechtel/style/eslint/react-compiler.js';
++ import styleReact from '@timobechtel/style/eslint/react.js';
+```
+
+</details>
+
+<details>
   <summary>Or manually</summary>
   
-  Also spread `styleReact` from `@timobechtel/style/eslint/react.js`:
-
 ```js
 import styleCore from '@timobechtel/style/eslint/core.js';
-import styleReact from '@timobechtel/style/eslint/react.js';
+import styleReact from '@timobechtel/style/eslint/react-compiler.js';
 import { defineConfig } from 'eslint/config';
 
 export default defineConfig([

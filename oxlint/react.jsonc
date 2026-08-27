@@ -1,14 +1,12 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "extends": [
-    "./core.jsonc"
-  ],
-  "plugins": [
-    "unicorn",
-    "typescript",
-    "oxc",
-    "import",
-    "react"
+  "extends": ["./core.jsonc"],
+  "plugins": ["unicorn", "typescript", "oxc", "import", "react"],
+  "jsPlugins": [
+    {
+      "name": "style-react",
+      "specifier": "../eslint/plugins/react.js",
+    },
   ],
   "rules": {
     // ---- style rules ----
@@ -18,8 +16,8 @@
       {
         "props": "never",
         "children": "ignore",
-        "propElementValues": "always"
-      }
+        "propElementValues": "always",
+      },
     ],
     "react/jsx-fragments": "warn",
     "react/jsx-pascal-case": "warn",
@@ -29,18 +27,39 @@
     "react/jsx-no-target-blank": [
       "error",
       {
-        "allowReferrer": true
-      }
+        "allowReferrer": true,
+      },
     ],
     "react/jsx-no-useless-fragment": [
       "warn",
       {
-        "allowExpressions": true
-      }
+        "allowExpressions": true,
+      },
     ],
 
     // ---- restriction rules ----
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": [
+          {
+            "name": "react",
+            "importNames": ["default", "*"],
+            "allowTypeImports": true,
+            "message": "Use named React imports.",
+          },
+          {
+            "name": "react",
+            "importNames": ["forwardRef"],
+            "allowTypeImports": true,
+            "message": "Pass ref as a prop instead of using forwardRef.",
+          },
+        ],
+      },
+    ],
     "react/no-unknown-property": "error",
-    "react/button-has-type": "error"
-  }
+    "react/button-has-type": "error",
+    "react/react-in-jsx-scope": "off",
+    "style-react/prefer-no-use-effect": "warn",
+  },
 }

@@ -1,5 +1,5 @@
 import styleCore from '@timobechtel/style/eslint/core.js';
-import styleReact from '@timobechtel/style/eslint/react.js';
+import styleReact from '@timobechtel/style/eslint/react-compiler.js';
 import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
 import { createNodeResolver } from 'eslint-plugin-import-x';
 import { defineConfig } from 'eslint/config';

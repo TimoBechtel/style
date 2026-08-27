@@ -2,6 +2,25 @@ import { defineConfig } from 'eslint/config';
 
 export default defineConfig({
   rules: {
+    'no-restricted-imports': [
+      'error',
+      {
+        paths: [
+          {
+            name: 'react',
+            importNames: ['default', '*'],
+            allowTypeImports: true,
+            message: 'Use named React imports.',
+          },
+          {
+            name: 'react',
+            importNames: ['forwardRef'],
+            allowTypeImports: true,
+            message: 'Pass ref as a prop instead of using forwardRef.',
+          },
+        ],
+      },
+    ],
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/button-has-type': 'error',
@@ -36,5 +55,6 @@ export default defineConfig({
     'react/self-closing-comp': 'warn',
     'react-hooks/exhaustive-deps': 'error',
     'react/destructuring-assignment': ['warn', 'always'],
+    'style-react/prefer-no-use-effect': 'warn',
   },
 });
