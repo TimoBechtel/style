@@ -59,6 +59,7 @@
     ],
     "react/no-unknown-property": "error",
     "react/button-has-type": "error",
+    "react/no-deriving-state-in-effects": "error",
     "react/react-in-jsx-scope": "off",
     "style-react/prefer-no-use-effect": "warn",
   },
