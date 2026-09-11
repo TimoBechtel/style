@@ -163,6 +163,7 @@
     ],
 
     // ---- perf rules ----
+    "oxc/no-accumulating-spread": "error",
     "unicorn/prefer-array-find": "error",
     "unicorn/prefer-array-flat-map": "error",
     "unicorn/prefer-set-has": "error",
