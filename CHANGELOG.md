@@ -1,3 +1,10 @@
+# [2.7.0](https://github.com/TimoBechtel/style/compare/v2.6.0...v2.7.0) (2026-11-24)
+
+
+### Features
+
+* **oxlint:** allow up to three classes per file ([ae357fe](https://github.com/TimoBechtel/style/commit/ae357fe32243b4b1c97df4751e2413cff6d98711))
+
 # [2.6.0](https://github.com/TimoBechtel/style/compare/v2.5.0...v2.6.0) (2026-11-24)
 
 
