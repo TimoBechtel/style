@@ -14,6 +14,8 @@
     "default-param-last": "error",
     "import/first": "error",
     "import/no-duplicates": "warn",
+    // Raise the default from one to three so closely related classes can share a file.
+    "max-classes-per-file": ["error", 3],
     "new-cap": [
       "error",
       {
