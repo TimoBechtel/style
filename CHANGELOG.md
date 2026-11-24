@@ -1,3 +1,10 @@
+# [2.6.0](https://github.com/TimoBechtel/style/compare/v2.5.0...v2.6.0) (2026-11-24)
+
+
+### Features
+
+* **typescript:** check for implicit returns instead of mixed return styles ([4d96be5](https://github.com/TimoBechtel/style/commit/4d96be591d079d4a3b68770254d1a93e58256ed4))
+
 # [2.5.0](https://github.com/TimoBechtel/style/compare/v2.4.0...v2.5.0) (2026-08-27)
 
 
