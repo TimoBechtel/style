@@ -20,6 +20,7 @@
     "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
     "noImplicitAny": true,
+    "noImplicitReturns": true,
     "noUncheckedIndexedAccess": true,
     "noUnusedLocals": false,
     "noUnusedParameters": false,

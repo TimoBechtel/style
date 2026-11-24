@@ -187,8 +187,8 @@
 
     // report duplicate code in branches
     "oxc/branches-sharing-code": "warn",
-    // prevent mixing value and non-value returns in functions
-    "typescript/consistent-return": "warn",
+    // Let TypeScript's noImplicitReturns catch fallthrough while allowing explicit early returns.
+    "typescript/consistent-return": "off",
     "typescript/no-unnecessary-qualifier": "warn",
     "typescript/prefer-readonly": "warn",
     // this is nice, but adds a lot of noise to existing codebases
